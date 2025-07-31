@@ -1,22 +1,23 @@
-
 import React, { useEffect, useState } from 'react';
 import { Moon, Sun } from 'react-feather';
 
 const ThemeToggle = () => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-    localStorage.setItem('theme', theme);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-  };
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   return (
-    <button onClick={toggleTheme} className="ml-4 p-2 rounded focus:outline-none hover:bg-gray-200 dark:hover:bg-gray-700">
-      {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+    <button
+      onClick={() => setDarkMode(!darkMode)}
+      className="p-1 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600"
+    >
+      {darkMode ? <Sun size={16} /> : <Moon size={16} />}
     </button>
   );
 };
