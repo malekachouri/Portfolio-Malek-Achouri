@@ -12,13 +12,15 @@ const Navbar = () => {
 
         {/* Navigation Menu */}
         <nav className="flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-100">
-          <a href="#about" className="hover:text-indigo-600 transition-all">About</a>
-          <a href="#skills" className="hover:text-indigo-600 transition-all">Skills</a>
-          <a href="#experience" className="hover:text-indigo-600 transition-all">Experience</a>
-          <a href="#projects" className="hover:text-indigo-600 transition-all">Projects</a>
-          <a href="#contact" className="hover:text-indigo-600 transition-all">Contact</a>
-          <ThemeToggle />
-        </nav>
+        <a href="#home" className="hover:text-indigo-600">Home</a>
+        <a href="#about" className="hover:text-indigo-600">About</a>
+        <a href="#skills" className="hover:text-indigo-600">Skills</a>
+        <a href="#experience" className="hover:text-indigo-600">Experience</a>
+        <a href="#projects" className="hover:text-indigo-600">Projects</a>
+        <a href="#contact" className="hover:text-indigo-600">Contact</a>
+        <ThemeToggle />
+      </nav>
+
       </div>
     </header>
   );
