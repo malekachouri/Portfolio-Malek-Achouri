@@ -3,10 +3,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import {
   FaAws, FaJenkins, FaDocker, FaCodeBranch, FaLinux,
-  FaTools, FaDatabase, FaCloud, FaCogs
+  FaTools, FaDatabase, FaCogs
 } from 'react-icons/fa';
-import { SiKubernetes, SiTerraform, SiAnsible, SiGithub,
-  SiSonarqube, SiGrafana, SiPrometheus, SiApachetomcat, SiMaven
+import {
+  SiKubernetes, SiTerraform, SiAnsible, SiGithub,
+  SiSonarqube, SiGrafana, SiPrometheus, SiApachetomcat
 } from 'react-icons/si';
 
 const skills = [
@@ -24,7 +25,7 @@ const skills = [
   { name: 'Prometheus', icon: <SiPrometheus />, category: 'Monitoring' },
   { name: 'Linux/Shell', icon: <FaLinux />, category: 'Scripting' },
   { name: 'Tomcat', icon: <SiApachetomcat />, category: 'Servers' },
-  { name: 'Maven', icon: <SiMaven />, category: 'Build' },
+  { name: 'Maven', icon: <FaCogs />, category: 'Build' }, // ✅ Changed icon
   { name: 'YAML/Groovy', icon: <FaTools />, category: 'Scripting' },
 ];
 
