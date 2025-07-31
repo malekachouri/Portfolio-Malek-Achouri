@@ -1,34 +1,26 @@
-// src/pages/Hero.jsx
+// src/components/Navbar.jsx
 import React from 'react';
-import { motion } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
-const Hero = () => {
+const Navbar = () => {
   return (
-    <section id="hero" className="min-h-screen bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-black flex items-center justify-center text-center px-6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-3xl"
-      >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 dark:text-white mb-6">
-          Hi, I'm Ramagiri Jithendar 👋
+    <header className="bg-white dark:bg-gray-900 shadow sticky top-0 z-50 transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+          Ramagiri Jithendar
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6">
-          AWS & DevOps Engineer with 5+ years of experience in automating infrastructure, 
-          streamlining CI/CD pipelines, and delivering scalable cloud-native solutions.
-        </p>
-        <a
-          href="/assets/Ramagiri_Jithendar_DevOps_Engineer_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition duration-300"
-        >
-          Download Resume
-        </a>
-      </motion.div>
-    </section>
+        <nav className="flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-100">
+          <a href="#hero" className="hover:text-indigo-600 transition">Home</a>
+          <a href="#about" className="hover:text-indigo-600 transition">About</a>
+          <a href="#skills" className="hover:text-indigo-600 transition">Skills</a>
+          <a href="#experience" className="hover:text-indigo-600 transition">Experience</a>
+          <a href="#projects" className="hover:text-indigo-600 transition">Projects</a>
+          <a href="#contact" className="hover:text-indigo-600 transition">Contact</a>
+          <ThemeToggle />
+        </nav>
+      </div>
+    </header>
   );
 };
 
-export default Hero;
+export default Navbar;
