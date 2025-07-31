@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleToggle = () => setMenuOpen(!menuOpen);
+
+  const handleClose = () => setMenuOpen(false);
+
   return (
     <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -10,17 +17,35 @@ const Navbar = () => {
           Ramagiri Jithendar
         </h1>
 
-        {/* Navigation */}
-        <nav className="flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-100">
-          <a href="#home" className="hover:text-indigo-600 transition-colors duration-200">Home</a>
-          <a href="#about" className="hover:text-indigo-600 transition-colors duration-200">About</a>
-          <a href="#skills" className="hover:text-indigo-600 transition-colors duration-200">Skills</a>
-          <a href="#experience" className="hover:text-indigo-600 transition-colors duration-200">Experience</a>
-          <a href="#projects" className="hover:text-indigo-600 transition-colors duration-200">Projects</a>
-          <a href="#contact" className="hover:text-indigo-600 transition-colors duration-200">Contact</a>
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-100">
+          <a href="#home" onClick={handleClose} className="hover:text-indigo-600">Home</a>
+          <a href="#about" onClick={handleClose} className="hover:text-indigo-600">About</a>
+          <a href="#skills" onClick={handleClose} className="hover:text-indigo-600">Skills</a>
+          <a href="#experience" onClick={handleClose} className="hover:text-indigo-600">Experience</a>
+          <a href="#projects" onClick={handleClose} className="hover:text-indigo-600">Projects</a>
+          <a href="#contact" onClick={handleClose} className="hover:text-indigo-600">Contact</a>
           <ThemeToggle />
         </nav>
+
+        {/* Hamburger Icon */}
+        <div className="md:hidden text-gray-800 dark:text-white text-2xl cursor-pointer" onClick={handleToggle}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-white dark:bg-gray-900 px-6 pb-4 pt-2 text-center space-y-4 shadow">
+          <a href="#home" onClick={handleClose} className="block hover:text-indigo-600">Home</a>
+          <a href="#about" onClick={handleClose} className="block hover:text-indigo-600">About</a>
+          <a href="#skills" onClick={handleClose} className="block hover:text-indigo-600">Skills</a>
+          <a href="#experience" onClick={handleClose} className="block hover:text-indigo-600">Experience</a>
+          <a href="#projects" onClick={handleClose} className="block hover:text-indigo-600">Projects</a>
+          <a href="#contact" onClick={handleClose} className="block hover:text-indigo-600">Contact</a>
+          <div className="flex justify-center"><ThemeToggle /></div>
+        </div>
+      )}
     </header>
   );
 };
