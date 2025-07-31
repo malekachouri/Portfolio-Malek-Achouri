@@ -1,24 +1,20 @@
-
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <motion.section 
-      className="text-center py-20 bg-indigo-600 text-white"
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      <h2 className="text-5xl font-extrabold mb-2">AWS & DevOps Engineer</h2>
-      <p className="text-lg">5+ years in cloud automation | CI/CD | Kubernetes | Terraform | Docker</p>
-      <div className="mt-6">
-        <a href="/assets/resume.pdf" download className="inline-block px-6 py-3 bg-white text-indigo-700 font-semibold rounded shadow hover:shadow-md">
-          Download Resume
-        </a>
-      </div>
-    </motion.section>
-  )
-}
+    <section className="py-20 px-4 bg-indigo-100 dark:bg-indigo-900 text-center">
+      <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Hi, I’m Ramagiri Jithendar</h1>
+      <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">Senior DevOps Engineer | AWS | CI/CD | Kubernetes</p>
+      <a
+        href="/assets/Ramagiri_Jithendar_DevOps_Engineer_Resume.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700"
+      >
+        Download Resume
+      </a>
+    </section>
+  );
+};
 
 export default Hero;
