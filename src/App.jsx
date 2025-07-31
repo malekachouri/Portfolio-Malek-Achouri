@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./pages/Hero";
@@ -9,6 +9,15 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
 const App = () => {
+  // Ensure dark mode applies root-level class
+  useEffect(() => {
+    if (localStorage.theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   return (
     <div className="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
       <Navbar />
