@@ -1,24 +1,28 @@
-import React from 'react'
-import Hero from './pages/Hero'
-import Skills from './pages/Skills'
-import Experience from './pages/Experience'
-import Projects from './pages/Projects'
-import Contact from './pages/Contact'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import React from 'react';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Hero from './pages/Hero';
+import About from './pages/About';
+import Skills from './pages/Skills';
+import Experience from './pages/Experience';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
 function App() {
   return (
-    <div className="bg-gradient-to-br from-slate-50 to-indigo-50 text-gray-800">
+    <div>
       <Navbar />
-      <Hero />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
