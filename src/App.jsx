@@ -1,28 +1,29 @@
-import React from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Hero from './pages/Hero';
-import About from './pages/About';
-import Skills from './pages/Skills';
-import Experience from './pages/Experience';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import React from "react";
+import Navbar from "./components/Navbar";
+import Hero from "./pages/Hero";
+import About from "./pages/About";
+import Skills from "./pages/Skills";
+import Experience from "./pages/Experience";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Footer from "./components/Footer";
+import "./index.css";
 
-function App() {
+const App = () => {
   return (
-    <div>
+    <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
+        <section id="home"><Hero /></section>
+        <section id="about"><About /></section>
+        <section id="skills"><Skills /></section>
+        <section id="experience"><Experience /></section>
+        <section id="projects"><Projects /></section>
+        <section id="contact"><Contact /></section>
       </main>
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
