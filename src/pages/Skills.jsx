@@ -1,58 +1,57 @@
 // src/pages/Skills.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
+import {
+  FaAws, FaJenkins, FaDocker, FaCodeBranch, FaLinux,
+  FaTools, FaDatabase, FaCloud, FaCogs
+} from 'react-icons/fa';
+import { SiKubernetes, SiTerraform, SiAnsible, SiGithub,
+  SiSonarqube, SiGrafana, SiPrometheus, SiApachetomcat, SiMaven
+} from 'react-icons/si';
 
-const skillsData = [
-  {
-    category: 'Cloud & Containerization',
-    items: ['AWS', 'Kubernetes', 'Docker'],
-  },
-  {
-    category: 'CI/CD & DevOps',
-    items: ['Jenkins', 'GitHub Actions', 'Argo CD', 'SonarQube', 'Nexus'],
-  },
-  {
-    category: 'Infrastructure as Code',
-    items: ['Terraform', 'Ansible', 'Shell Scripting', 'YAML', 'Groovy'],
-  },
-  {
-    category: 'Monitoring & Version Control',
-    items: ['Prometheus', 'Grafana', 'Git', 'GitHub'],
-  },
-  {
-    category: 'Build & Application Servers',
-    items: ['Maven', 'Apache Tomcat'],
-  },
+const skills = [
+  { name: 'AWS', icon: <FaAws />, category: 'Cloud' },
+  { name: 'Docker', icon: <FaDocker />, category: 'Containers' },
+  { name: 'Kubernetes', icon: <SiKubernetes />, category: 'Containers' },
+  { name: 'Terraform', icon: <SiTerraform />, category: 'IaC' },
+  { name: 'Ansible', icon: <SiAnsible />, category: 'IaC' },
+  { name: 'Jenkins', icon: <FaJenkins />, category: 'CI/CD' },
+  { name: 'Git', icon: <FaCodeBranch />, category: 'VCS' },
+  { name: 'GitHub', icon: <SiGithub />, category: 'VCS' },
+  { name: 'SonarQube', icon: <SiSonarqube />, category: 'CI/CD' },
+  { name: 'Nexus', icon: <FaDatabase />, category: 'CI/CD' },
+  { name: 'Grafana', icon: <SiGrafana />, category: 'Monitoring' },
+  { name: 'Prometheus', icon: <SiPrometheus />, category: 'Monitoring' },
+  { name: 'Linux/Shell', icon: <FaLinux />, category: 'Scripting' },
+  { name: 'Tomcat', icon: <SiApachetomcat />, category: 'Servers' },
+  { name: 'Maven', icon: <SiMaven />, category: 'Build' },
+  { name: 'YAML/Groovy', icon: <FaTools />, category: 'Scripting' },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 bg-white dark:bg-gray-950 transition-all duration-300">
+    <section id="skills" className="py-16 bg-gray-50 dark:bg-gray-900 transition-all duration-300">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <motion.h2 
-          className="text-3xl font-semibold text-indigo-600 dark:text-indigo-400 mb-6"
-          initial={{ opacity: 0, y: -20 }}
+        <motion.h2
+          className="text-3xl font-semibold text-indigo-600 dark:text-indigo-400 mb-10"
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.5 }}
         >
-          Skills & Tools
+          DevOps Tools & Technologies
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillsData.map((skillGroup, idx) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+          {skills.map((skill, index) => (
             <motion.div
-              key={idx}
-              className="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow-md transition-all"
-              initial={{ opacity: 0, y: 30 }}
+              key={index}
+              className="flex flex-col items-center bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform"
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
             >
-              <h3 className="text-xl font-bold text-gray-700 dark:text-white mb-4">{skillGroup.category}</h3>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                {skillGroup.items.map((item, index) => (
-                  <li key={index} className="hover:text-indigo-500 transition">{item}</li>
-                ))}
-              </ul>
+              <div className="text-3xl text-indigo-600 mb-2">{skill.icon}</div>
+              <p className="text-sm font-medium text-gray-800 dark:text-gray-100">{skill.name}</p>
             </motion.div>
           ))}
         </div>
