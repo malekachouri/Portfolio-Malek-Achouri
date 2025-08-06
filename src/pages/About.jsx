@@ -1,32 +1,72 @@
 import React from 'react';
-import { FaAws, FaTools, FaCogs } from 'react-icons/fa';
+import { FaAws, FaTools, FaCogs, FaSearch } from 'react-icons/fa';
 
 const About = () => {
   return (
-    <section id="about" className="py-16 px-6 bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200">
+    <section
+      id="about"
+      className="py-16 px-6 bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200"
+    >
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">About Me</h2>
+        <h2 className="text-4xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">
+          About Me
+        </h2>
+
         <p className="text-lg mb-6 leading-relaxed">
-          I'm <strong>Ramagiri Jithendar</strong>, a <strong>DevOps & Cloud Engineer</strong> based in Bengaluru, India, with over <strong>5 years of experience</strong> in automating infrastructure, CI/CD pipelines, and managing scalable cloud-native applications.
+          I'm <strong>Achouri Malek</strong>, a <strong>Cloud & DevOps Engineer</strong> based
+          in <strong>Sfax, Tunisia</strong>. I specialize in designing automated,
+          scalable, and secure cloud environments that empower applications to perform
+          reliably and efficiently.
         </p>
+
         <p className="text-lg mb-6 leading-relaxed">
-          With strong hands-on expertise in AWS, Kubernetes, Jenkins, Terraform, and Docker, I have helped organizations reduce deployment time, enhance system availability, and ensure production reliability through DevOps best practices.
+          My expertise spans cloud-native deployments, CI/CD pipelines, container
+          orchestration, and advanced monitoring solutions. I’ve led projects
+          including private cloud implementations with OpenStack, GitOps workflows
+          with ArgoCD, and observability platforms using <strong>Prometheus</strong> and{' '}
+          <strong>Grafana</strong>, driving scalability and high availability for
+          organizations.
         </p>
-        <div className="grid md:grid-cols-3 gap-6 text-left mt-10">
+
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 text-left mt-10">
+          {/* Cloud Infrastructure */}
           <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
             <FaAws className="text-3xl mb-4 text-indigo-500" />
-            <h3 className="text-xl font-semibold mb-2">Cloud & Infrastructure</h3>
-            <p>Hands-on with AWS (EC2, EKS, VPC, S3, Route 53), Terraform, and Ansible for secure, scalable cloud environments.</p>
+            <h3 className="text-xl font-semibold mb-2">Cloud Infrastructure</h3>
+            <p>
+              Expertise in AWS, OpenStack, and private cloud solutions to build scalable
+              and secure environments.
+            </p>
           </div>
+
+          {/* Containers & CI/CD */}
           <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
             <FaTools className="text-3xl mb-4 text-indigo-500" />
-            <h3 className="text-xl font-semibold mb-2">DevOps Tools</h3>
-            <p>Expert in Jenkins, GitHub Actions, ArgoCD, Maven, SonarQube, and Nexus for automated, quality-driven delivery pipelines.</p>
+            <h3 className="text-xl font-semibold mb-2">Containers & CI/CD</h3>
+            <p>
+              Skilled with Kubernetes, Docker, GitLab CI/CD, and ArgoCD for automated
+              container deployments.
+            </p>
           </div>
+
+          {/* Automation & IaC */}
           <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
             <FaCogs className="text-3xl mb-4 text-indigo-500" />
-            <h3 className="text-xl font-semibold mb-2">Automation & Monitoring</h3>
-            <p>Automated environments using Shell scripting, YAML, and monitored infrastructure with Prometheus and Grafana.</p>
+            <h3 className="text-xl font-semibold mb-2">Automation & IaC</h3>
+            <p>
+              Infrastructure as Code with Terraform, Ansible, and Kolla-Ansible to
+              automate infrastructure provisioning.
+            </p>
+          </div>
+
+          {/* Monitoring & Observability */}
+          <div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+            <FaSearch className="text-3xl mb-4 text-indigo-500" />
+            <h3 className="text-xl font-semibold mb-2">Monitoring & Observability</h3>
+            <p>
+              Implement monitoring with Prometheus and Grafana, and logging with the EFK
+              stack for full observability.
+            </p>
           </div>
         </div>
       </div>
