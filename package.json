@@ -1,8 +1,8 @@
 {
   "name": "portfolio-react",
   "version": "1.0.0",
-  "description": "Ramagiri Jithendar - DevOps Portfolio built with React, Vite, and Tailwind CSS",
-  "author": "Ramagiri Jithendar",
+  "description": "Achouri Malek - DevOps Portfolio built with React, Vite, and Tailwind CSS",
+  "author": "Achouri Malek",
   "license": "MIT",
   "scripts": {
     "start": "npm run dev",

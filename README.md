@@ -1,6 +1,6 @@
-# Ramagiri Jithendar - DevOps Portfolio
+# Achouri Malek - DevOps Portfolio
 
-This is a personal portfolio website showcasing the profile, skills, experience, and projects of DevOps Engineer Ramagiri Jithendar.
+This is a personal portfolio website showcasing the profile, skills, experience, and projects of DevOps Engineer Achouri Malek.
 
 ## 🚀 Technologies Used
 - React + Vite

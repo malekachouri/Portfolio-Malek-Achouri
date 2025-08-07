@@ -13,7 +13,7 @@ const Hero = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          Hi, I’m <span className="text-indigo-600">Ramagiri Jithendar</span>
+          Hi, I’m <span className="text-indigo-600">Achouri Malek</span>
         </motion.h1>
 
         <motion.p
@@ -32,7 +32,7 @@ const Hero = () => {
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           <a
-            href="https://github.com/Jithendarramagiri1998"
+            href="https://github.com/malekachouri"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white rounded hover:bg-indigo-600 hover:text-white transition"
@@ -41,7 +41,7 @@ const Hero = () => {
             GitHub
           </a>
           <a
-            href="https://www.linkedin.com/in/jithendarramagiri"
+            href="https://www.linkedin.com/in/achouri-malek/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-white rounded hover:bg-indigo-600 hover:text-white transition"
@@ -50,7 +50,7 @@ const Hero = () => {
             LinkedIn
           </a>
           <a
-            href="/assets/Ramagiri_Jithendar_DevOps_Engineer_Resume.pdf"
+            href="/assets/Achouri-Malek-cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-4 py-2 text-sm font-medium bg-indigo-600 text-white rounded hover:bg-indigo-700 transition"

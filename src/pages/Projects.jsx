@@ -1,44 +1,82 @@
 // src/pages/Projects.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaAws, FaDocker, FaCogs, FaCodeBranch } from 'react-icons/fa';
+import { FaAws, FaLock, FaCodeBranch, FaNetworkWired, FaAngular, FaNodeJs } from 'react-icons/fa';
 
 const projects = [
   {
-    title: "Enterprise DevOps Automation",
-    company: "Symplocos Solutions Ltd",
-    duration: "Jan 2024 – Present",
+    title: "CI/CD Automation with AWS Step Functions",
+    company: "Academic Project",
+    duration: "Oct 2024 – Dec 2024",
     summary: [
-      "Modernized software delivery for large-scale apps using DevOps practices.",
-      "Built automated CI/CD pipelines with Jenkins, GitHub Actions.",
-      "Managed scalable Kubernetes clusters (EKS) with Helm and Docker.",
-      "Streamlined infrastructure with Terraform & Ansible, reducing downtime.",
+      "Designed automated CI/CD workflows using AWS Step Functions, Lambda, and S3 to optimize deployment processes.",
+      "Deployed scalable infrastructures using CloudFormation and Python Boto3 scripts.",
+      "Implemented multi-environment pipelines with automatic rollback to ensure service continuity.",
+      "Tools: Step Functions, Lambda, S3, CloudFormation, Boto3, Python.",
     ],
     icon: <FaAws className="text-indigo-600 text-2xl" />,
   },
   {
-    title: "Cloud Infrastructure Optimization",
-    company: "People Tech Group",
-    duration: "Jan 2023 – Jan 2024",
+    title: "Secure Authentication & Authorization",
+    company: "Academic Project",
+    duration: "Oct 2024 – Nov 2024",
     summary: [
-      "Designed Jenkins-based CI/CD pipelines reducing failures by 40%.",
-      "Provisioned scalable AWS infra using Terraform & Ansible.",
-      "Managed Tomcat servers and deployed Dockerized services to Kubernetes.",
-      "Integrated SonarQube and Nexus for secure code delivery.",
+      "Developed a secure authentication and authorization system with Flask and Keycloak.",
+      "Configured a custom realm for user and role management.",
+      "Enhanced security and scalability via centralized authentication.",
+      "Tools: Flask, Keycloak, OIDC, OAuth2, Python, REST APIs.",
     ],
-    icon: <FaDocker className="text-indigo-600 text-2xl" />,
+    icon: <FaLock className="text-indigo-600 text-2xl" />,
   },
   {
-    title: "Monitoring & Infra Automation",
-    company: "Elancer IT Solutions",
-    duration: "Dec 2019 – Jan 2023",
+    title: "GitOps with Argo CD",
+    company: "Final Year Project",
+    duration: "Sep 2023 – May 2024",
     summary: [
-      "Deployed EKS clusters and set up monitoring via Prometheus & Grafana.",
-      "Automated server setups using Ansible, improving release speed by 50%.",
-      "Configured EC2, S3, VPC, IAM for production-grade AWS environments.",
-      "Managed source control workflows using Git & GitHub.",
+      "Managed scalable Kubernetes clusters (K3s, Kubeadm, Minikube) for testing and development environments.",
+      "Automated CI/CD and Infrastructure as Code (IaC) deployments with Argo CD following GitOps principles.",
+      "Improved delivery consistency and release speed.",
+      "Tools: Kubernetes (K3s, Kubeadm, Minikube), Argo CD, Jenkins, Docker, GitLab, Helm, Kustomize.",
     ],
-    icon: <FaCogs className="text-indigo-600 text-2xl" />,
+    icon: <FaCodeBranch className="text-indigo-600 text-2xl" />,
+  },
+  {
+    title: "Kubernetes Case Study",
+    company: "Academic Project",
+    duration: "2023",
+    summary: [
+      "Implemented a CI/CD pipeline with GitHub Actions for a containerized application.",
+    ],
+    icon: <FaCodeBranch className="text-indigo-600 text-2xl" />,
+  },
+  {
+    title: "FTTH-GEPON Network Design",
+    company: "Academic Project",
+    duration: "Apr 2023 – May 2023",
+    summary: [
+      "Designed and implemented an FTTH-GEPON architecture using OLT LTE-2X, ONU NTE-2C, and SFT-P splitters.",
+      "Created data & video network topologies with OLT port configurations.",
+      "Simulated optical losses to optimize transmission and minimize attenuation.",
+      "Evaluated GPON benefits: cost reduction, scalability, and higher subscriber density.",
+    ],
+    icon: <FaNetworkWired className="text-indigo-600 text-2xl" />,
+  },
+  {
+    title: "Parapharmacy Web Application",
+    company: "Academic Project",
+    duration: "2024",
+    summary: [
+      "Developed a web application for a parapharmacy to manage products, categories, and online orders.",
+      "Implemented a responsive frontend with Angular and a RESTful backend with Node.js & Express.",
+      "Integrated MongoDB for product management and JWT authentication for secure access.",
+      "Tools: Angular, Node.js, Express, MongoDB, JWT, REST APIs.",
+    ],
+    icon: (
+      <div className="flex items-center space-x-1">
+        <FaAngular className="text-red-600 text-2xl" />
+        <FaNodeJs className="text-green-600 text-2xl" />
+      </div>
+    ),
   },
 ];
 
@@ -52,7 +90,7 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Real-Time DevOps Projects
+          Academic Projects
         </motion.h2>
 
         <div className="grid gap-8 md:grid-cols-2">
