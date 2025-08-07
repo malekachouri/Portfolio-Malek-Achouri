@@ -6,7 +6,7 @@ const Awards = () => {
       date: "17/10/2024",
       title: "1st Place - Green Tech Hackathon",
       description:
-        "WE-SPICE Program: Training Tomorrow's Innovators, organized by Technische Universität Chemnitz, supported by the DRÄXLMAIER Group.",
+        "Awarded 1st place at the Green Tech Hackathon, part of the WE-SPICE program: 'Training Tomorrow’s Innovators'. This prestigious event was organized by Technische Universität Chemnitz and supported by the DRÄXLMAIER Group. Our team proposed a sustainable, tech-driven solution addressing real-world environmental challenges using IoT and AI technologies. The competition brought together talented students from around the world to innovate for a greener future.",
       images: [
         "/assets/Green Tech Hackathon1.jpeg",
         "/assets/Green Tech Hackathon4.jpeg",

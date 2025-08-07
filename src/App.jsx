@@ -3,13 +3,17 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./pages/Hero";
 import About from "./pages/About";
+import Education from "./pages/Education";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Projects from "./pages/Projects";
+import Certifications from "./pages/Certifications";
+import Languages from "./pages/Languages";
+import Awards from "./pages/Awards";
+import Associative from "./pages/Associative";
 import Contact from "./pages/Contact";
 
 const App = () => {
-  // Ensure dark mode applies root-level class
   useEffect(() => {
     if (localStorage.theme === "dark") {
       document.documentElement.classList.add("dark");
@@ -28,6 +32,9 @@ const App = () => {
         <section id="about">
           <About />
         </section>
+        <section id="education">
+          <Education />
+        </section>
         <section id="skills">
           <Skills />
         </section>
@@ -36,6 +43,18 @@ const App = () => {
         </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="certifications">
+          <Certifications />
+        </section>
+        <section id="languages">
+          <Languages />
+        </section>
+        <section id="awards">
+          <Awards />
+        </section>
+        <section id="associative">
+          <Associative />
         </section>
         <section id="contact">
           <Contact />
