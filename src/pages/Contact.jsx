@@ -3,7 +3,8 @@ import { FaEnvelope, FaGithub, FaLinkedin, FaGitlab } from 'react-icons/fa';
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-16 px-6 bg-gray-50 dark:bg-gray-950 text-center text-gray-800 dark:text-gray-200">
+    <section id="contact"       className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
+>
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">Get In Touch</h2>
         <p className="text-lg mb-8">Interested in working together or have questions? Feel free to reach out!</p>

@@ -29,7 +29,7 @@ const Associative = () => {
   return (
     <section
       id="associative"
-      className="py-16 px-6 bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100"
+      className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
     >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-indigo-600 dark:text-indigo-400 text-center">

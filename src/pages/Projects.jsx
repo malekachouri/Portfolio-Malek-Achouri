@@ -1,4 +1,3 @@
-// src/pages/Projects.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaAws, FaLock, FaCodeBranch, FaNetworkWired, FaAngular, FaNodeJs } from 'react-icons/fa';
@@ -82,34 +81,41 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-16 bg-white dark:bg-gray-900 transition-all duration-300">
-      <div className="max-w-6xl mx-auto px-4">
+    <section
+      id="projects"
+      className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
+    >
+      <div className="max-w-6xl mx-auto px-6">
         <motion.h2
-          className="text-3xl font-semibold text-indigo-600 dark:text-indigo-400 mb-10 text-center"
-          initial={{ opacity: 0, y: -30 }}
+          className="text-4xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 select-none"
+          initial={{ opacity: 0, y: -40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           Academic Projects
         </motion.h2>
 
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-gray-100 dark:bg-gray-800 rounded-lg shadow-md p-6"
-              initial={{ opacity: 0, y: 20 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-indigo-200 dark:border-indigo-700"
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.2 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
             >
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-4 mb-5">
                 {project.icon}
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white">{project.title}</h3>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{project.company} | {project.duration}</p>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{project.title}</h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {project.company} | {project.duration}
+                  </p>
                 </div>
               </div>
-              <ul className="list-disc pl-5 text-gray-700 dark:text-gray-200 space-y-2">
+              <ul className="list-disc pl-6 space-y-2 text-gray-700 dark:text-gray-200">
                 {project.summary.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}

@@ -17,7 +17,7 @@ const Awards = () => {
   return (
     <section
       id="awards"
-      className="py-16 px-6 bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200"
+      className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
     >
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-8 text-indigo-600 dark:text-indigo-400">

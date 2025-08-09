@@ -1,108 +1,129 @@
-// src/pages/Skills.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaLinux, FaPython, FaDocker, FaAws, FaGitAlt, FaGithub, FaReact, FaNodeJs, FaAngular 
+  FaLinux, FaPython, FaDocker, FaAws, FaGitAlt, FaGithub, FaReact, FaNodeJs, FaAngular, FaCloud, FaDatabase, FaProjectDiagram 
 } from 'react-icons/fa';
 import { 
   SiKubernetes, SiTerraform, SiAnsible, SiJenkins, SiGrafana, 
-  SiPrometheus, SiHelm, SiFlask, SiSpringboot, SiAzuredevops 
+  SiPrometheus, SiHelm, SiFlask, SiSpringboot, SiAzuredevops,
+  SiTensorflow, SiPytorch, SiKeras
 } from 'react-icons/si';
 
 const categories = [
   {
     title: "Cloud & Virtualization",
     skills: [
-      { name: "OpenStack", icon: <SiAzuredevops /> },
-      { name: "Ceph", icon: <SiAzuredevops /> },
-      { name: "Kolla-Ansible", icon: <SiAnsible /> },
-      { name: "Docker", icon: <FaDocker /> },
-      { name: "Kubernetes", icon: <SiKubernetes /> },
-      { name: "AWS", icon: <FaAws /> },
-      { name: "Azure", icon: <SiAzuredevops /> },
+      { name: "OpenStack", icon: <FaCloud />, color: "#0078D4" },
+      { name: "Ceph", icon: <FaDatabase />, color: "#E54B4B" },
+      { name: "Kolla-Ansible", icon: <SiAnsible />, color: "#EE6C4D" },
+      { name: "Docker", icon: <FaDocker />, color: "#2496ED" },
+      { name: "Kubernetes", icon: <SiKubernetes />, color: "#326CE5" },
+      { name: "AWS", icon: <FaAws />, color: "#FF9900" },
+      { name: "Azure", icon: <SiAzuredevops />, color: "#0078D4" },
     ],
   },
   {
     title: "DevOps & CI/CD",
     skills: [
-      { name: "Terraform", icon: <SiTerraform /> },
-      { name: "Ansible", icon: <SiAnsible /> },
-      { name: "Jenkins", icon: <SiJenkins /> },
-      { name: "ArgoCD", icon: <SiAzuredevops /> },
-      { name: "Git", icon: <FaGitAlt /> },
-      { name: "GitLab CI", icon: <FaGitAlt /> },
-      { name: "GitHub", icon: <FaGithub /> },
-      { name: "Prometheus", icon: <SiPrometheus /> },
-      { name: "Grafana", icon: <SiGrafana /> },
-      { name: "EFK Stack", icon: <SiGrafana /> },
+      { name: "Terraform", icon: <SiTerraform />, color: "#7B42BC" },
+      { name: "Ansible", icon: <SiAnsible />, color: "#EE6C4D" },
+      { name: "Jenkins", icon: <SiJenkins />, color: "#D33833" },
+      { name: "ArgoCD", icon: <FaProjectDiagram />, color: "#B5314C" },
+      { name: "Git", icon: <FaGitAlt />, color: "#F05032" },
+      { name: "GitLab CI", icon: <FaGitAlt />, color: "#FCA121" },
+      { name: "GitHub", icon: <FaGithub />, color: "#181717" },
+      { name: "Prometheus", icon: <SiPrometheus />, color: "#E6522C" },
+      { name: "Grafana", icon: <SiGrafana />, color: "#F46800" },
+      { name: "EFK Stack", icon: <SiGrafana />, color: "#4C8BF5" },
     ],
   },
   {
     title: "Systems & Scripting",
     skills: [
-      { name: "Linux", icon: <FaLinux /> },
-      { name: "Python", icon: <FaPython /> },
-      { name: "Bash", icon: <FaPython /> },
-      { name: "YAML", icon: <SiHelm /> },
-      { name: "Helm", icon: <SiHelm /> },
-      { name: "Kustomize", icon: <SiHelm /> },
+      { name: "Linux", icon: <FaLinux />, color: "#FCC624" },
+      { name: "Python", icon: <FaPython />, color: "#3776AB" },
+      { name: "Bash", icon: <FaPython />, color: "#4EAA25" },
+      { name: "YAML", icon: <SiHelm />, color: "#326CE5" },
+      { name: "Helm", icon: <SiHelm />, color: "#326CE5" },
+      { name: "Kustomize", icon: <SiHelm />, color: "#326CE5" },
     ],
   },
   {
     title: "Frameworks & Development",
     skills: [
-      { name: "Angular", icon: <FaAngular /> },
-      { name: "React", icon: <FaReact /> },
-      { name: "Node.js", icon: <FaNodeJs /> },
-      { name: "Spring Boot", icon: <SiSpringboot /> },
+      { name: "Angular", icon: <FaAngular />, color: "#DD0031" },
+      { name: "React", icon: <FaReact />, color: "#61DAFB" },
+      { name: "Node.js", icon: <FaNodeJs />, color: "#83CD29" },
+      { name: "Spring Boot", icon: <SiSpringboot />, color: "#6DB33F" },
     ],
   },
   {
     title: "AI & Deep Learning",
     skills: [
-      { name: "Deep Learning", icon: <SiFlask /> },
-      { name: "Transfer Learning", icon: <SiFlask /> },
-      { name: "Flask", icon: <SiFlask /> },
-      { name: "U-Net", icon: <SiFlask /> },
-      { name: "VGG19", icon: <SiFlask /> },
-      { name: "InceptionV3", icon: <SiFlask /> },
-      { name: "ResNet50V2", icon: <SiFlask /> },
+      { name: "Deep Learning", icon: <SiTensorflow />, color: "#FF6F61" },
+      { name: "Transfer Learning", icon: <SiPytorch />, color: "#EE4C2C" },
+      { name: "Flask", icon: <SiFlask />, color: "#000000" },
+      { name: "U-Net", icon: <SiKeras />, color: "#D00000" },
+      { name: "VGG19", icon: <SiKeras />, color: "#D00000" },
+      { name: "InceptionV3", icon: <SiKeras />, color: "#D00000" },
+      { name: "ResNet50V2", icon: <SiKeras />, color: "#D00000" },
     ],
   },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16 bg-gray-50 dark:bg-gray-900 transition-all duration-300">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+    <section id="skills" className="py-20 bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-900 dark:to-gray-950 transition-colors duration-500">
+      <div className="max-w-6xl mx-auto px-6 text-gray-900 dark:text-gray-100">
         <motion.h2
-          className="text-3xl font-semibold text-indigo-600 dark:text-indigo-400 mb-10"
-          initial={{ opacity: 0, y: -30 }}
+          className="text-4xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500"
+          initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
           My Skills
         </motion.h2>
 
-        {categories.map((category, idx) => (
-          <div key={idx} className="mb-12">
-            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6">{category.title}</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              {category.skills.map((skill, i) => (
-                <motion.div
-                  key={i}
-                  className="flex flex-col items-center bg-white dark:bg-gray-800 shadow-md rounded-lg p-4 hover:scale-105 transition-transform"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: i * 0.05 }}
-                >
-                  <div className="text-3xl text-indigo-600 mb-2">{skill.icon}</div>
-                  <p className="text-sm font-medium text-gray-800 dark:text-gray-100">{skill.name}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        ))}
+        <div className="space-y-20">
+          {categories.map((category, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+            >
+              <h3 className="text-2xl font-semibold text-indigo-700 dark:text-indigo-300 border-l-4 border-indigo-500 pl-5 mb-6 select-none">
+                {category.title}
+              </h3>
+
+              <div className="flex space-x-6 overflow-x-auto no-scrollbar py-3">
+                {category.skills.map((skill, i) => (
+                  <motion.div
+                    key={i}
+                    className="flex flex-col items-center flex-shrink-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 cursor-default select-none"
+                    style={{ minWidth: '90px' }}
+                    whileHover={{ scale: 1.1, boxShadow: '0 10px 15px rgba(99, 102, 241, 0.4)' }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <div 
+                      className="text-3xl mb-2"
+                      style={{ color: skill.color }}
+                      aria-label={skill.name + " icon"}
+                      role="img"
+                    >
+                      {skill.icon}
+                    </div>
+                    <span className="text-xs font-semibold text-center text-gray-900 dark:text-gray-100">
+                      {skill.name}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
