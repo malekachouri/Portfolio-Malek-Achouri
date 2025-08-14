@@ -1,6 +1,6 @@
 # Achouri Malek - DevOps Portfolio
 
-This is a personal portfolio website showcasing the profile, skills, experience, and projects of DevOps Engineer Achouri Malek.
+Crafted by Achouri Malek, this site distills DevOps mastery into a clean, fast experience—one scroll shows the skills, tools, and projects powering real-world cloud solutions.
 
 ## 🚀 Technologies Used
 - React + Vite
