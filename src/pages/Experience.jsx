@@ -107,11 +107,8 @@ const CheckIcon = () => (
 
 const Experience = () => {
   return (
-    <section
-      id="experience"
-      className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
-    >
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="experience" className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700">
+      <div className="max-w-7xl mx-auto px-6">
         <motion.h2
           className="text-4xl font-extrabold text-center mb-20 bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 select-none"
           initial={{ opacity: 0, y: -40 }}
@@ -122,11 +119,11 @@ const Experience = () => {
           Professional Experience
         </motion.h2>
 
-        <div className="space-y-14">
+        <div className="grid gap-12 md:grid-cols-2">
           {experiences.map((exp, idx) => (
             <motion.article
               key={idx}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg border border-indigo-200 dark:border-indigo-700"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-indigo-200 dark:border-indigo-700 flex flex-col"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -148,8 +145,8 @@ const Experience = () => {
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 italic select-none">{exp.location}</p>
 
               <section>
-                <h4 className="font-semibold text-indigo-600 mb-3 select-none">Key Highlights</h4>
-                <ul className="list-none space-y-3 text-gray-700 dark:text-gray-200 pl-5">
+                <h4 className="font-semibold text-indigo-700 mb-3 select-none">Key Highlights</h4>
+                <ul className="list-none space-y-2 text-gray-700 dark:text-gray-200 pl-5">
                   {exp.responsibilities.map((task, i) => (
                     <li key={i} className="flex items-start">
                       <CheckIcon />
@@ -159,13 +156,13 @@ const Experience = () => {
                 </ul>
               </section>
 
-              <section className="mt-8">
-                <h4 className="font-semibold text-indigo-600 mb-3 select-none">Technologies</h4>
-                <div className="flex flex-wrap gap-3 text-sm text-indigo-600 dark:text-indigo-400 font-semibold">
+              <section className="mt-6">
+                <h4 className="font-semibold text-indigo-700 mb-3 select-none">Technologies</h4>
+                <div className="flex flex-wrap gap-2 text-sm text-indigo-600 dark:text-indigo-400 font-semibold">
                   {exp.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="bg-indigo-100 dark:bg-indigo-900 px-4 py-1 rounded-full select-none cursor-default"
+                      className="bg-indigo-100 dark:bg-indigo-900 px-3 py-1 rounded-full select-none cursor-default"
                       title={tech}
                     >
                       {tech}

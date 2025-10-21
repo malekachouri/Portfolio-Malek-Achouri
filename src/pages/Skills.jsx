@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  FaLinux, FaPython, FaDocker, FaAws, FaGitAlt, FaGithub, FaReact, FaNodeJs, FaAngular, FaCloud, FaDatabase, FaProjectDiagram 
+  FaLinux, FaPython, FaDocker, FaAws, FaGitAlt, FaGithub, FaReact, FaNodeJs, FaAngular, FaCloud, FaDatabase, FaProjectDiagram, FaJava 
 } from 'react-icons/fa';
 import { 
   SiKubernetes, SiTerraform, SiAnsible, SiJenkins, SiGrafana, 
   SiPrometheus, SiHelm, SiFlask, SiSpringboot, SiAzuredevops,
-  SiTensorflow, SiPytorch, SiKeras
+  SiTensorflow, SiPytorch, SiKeras, SiJira, SiPostman 
 } from 'react-icons/si';
 
 const categories = [
@@ -55,6 +55,7 @@ const categories = [
       { name: "React", icon: <FaReact />, color: "#61DAFB" },
       { name: "Node.js", icon: <FaNodeJs />, color: "#83CD29" },
       { name: "Spring Boot", icon: <SiSpringboot />, color: "#6DB33F" },
+      { name: "Java", icon: <FaJava />, color: "#007396" },
     ],
   },
   {
@@ -69,12 +70,22 @@ const categories = [
       { name: "ResNet50V2", icon: <SiKeras />, color: "#D00000" },
     ],
   },
+  {
+    title: "Testing & QA Tools",
+    skills: [
+      { name: "Jira", icon: <SiJira />, color: "#0052CC" },
+      { name: "Xray", icon: <SiJira />, color: "#0052CC" },
+      { name: "Gherkin", icon: <FaProjectDiagram />, color: "#00BFA5" },
+      { name: "Postman", icon: <SiPostman />, color: "#FF6C37" },
+      { name: "Manual Testing", icon: <FaProjectDiagram />, color: "#6C63FF" },
+    ],
+  },
 ];
 
 const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-gradient-to-br from-indigo-50 to-white dark:from-indigo-900 dark:to-gray-950 transition-colors duration-500">
-      <div className="max-w-6xl mx-auto px-6 text-gray-900 dark:text-gray-100">
+      <div className="max-w-7xl mx-auto px-6 text-gray-900 dark:text-gray-100">
         <motion.h2
           className="text-4xl font-extrabold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500"
           initial={{ opacity: 0, y: -50 }}
@@ -85,7 +96,7 @@ const Skills = () => {
           My Skills
         </motion.h2>
 
-        <div className="space-y-20">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
           {categories.map((category, idx) => (
             <motion.div 
               key={idx}
@@ -98,21 +109,15 @@ const Skills = () => {
                 {category.title}
               </h3>
 
-              <div className="flex space-x-6 overflow-x-auto no-scrollbar py-3">
+              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
                 {category.skills.map((skill, i) => (
                   <motion.div
                     key={i}
-                    className="flex flex-col items-center flex-shrink-0 bg-white dark:bg-gray-800 shadow-lg rounded-xl p-4 cursor-default select-none"
-                    style={{ minWidth: '90px' }}
-                    whileHover={{ scale: 1.1, boxShadow: '0 10px 15px rgba(99, 102, 241, 0.4)' }}
+                    className="flex flex-col items-center bg-white dark:bg-gray-800 shadow-md rounded-xl p-3 cursor-default select-none"
+                    whileHover={{ scale: 1.05, boxShadow: '0 8px 12px rgba(99, 102, 241, 0.3)' }}
                     transition={{ type: 'spring', stiffness: 300 }}
                   >
-                    <div 
-                      className="text-3xl mb-2"
-                      style={{ color: skill.color }}
-                      aria-label={skill.name + " icon"}
-                      role="img"
-                    >
+                    <div className="text-3xl mb-1" style={{ color: skill.color }}>
                       {skill.icon}
                     </div>
                     <span className="text-xs font-semibold text-center text-gray-900 dark:text-gray-100">

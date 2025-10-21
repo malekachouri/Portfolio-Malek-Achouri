@@ -1,57 +1,70 @@
 import React from "react";
+import { motion } from "framer-motion";
+
+const awards = [
+  {
+    date: "17/10/2024",
+    title: "1st Place - Green Tech Hackathon",
+    description:
+      "Awarded 1st place at the Green Tech Hackathon, part of the WE-SPICE program: 'Training Tomorrow’s Innovators'. Our team proposed a sustainable, tech-driven solution using IoT and AI technologies, competing with talented students worldwide.",
+    images: [
+      "/assets/Green Tech Hackathon1.jpeg",
+      "/assets/Green Tech Hackathon4.jpeg",
+    ],
+  },
+];
 
 const Awards = () => {
-  const awards = [
-    {
-      date: "17/10/2024",
-      title: "1st Place - Green Tech Hackathon",
-      description:
-        "Awarded 1st place at the Green Tech Hackathon, part of the WE-SPICE program: 'Training Tomorrow’s Innovators'. This prestigious event was organized by Technische Universität Chemnitz and supported by the DRÄXLMAIER Group. Our team proposed a sustainable, tech-driven solution addressing real-world environmental challenges using IoT and AI technologies. The competition brought together talented students from around the world to innovate for a greener future.",
-      images: [
-        "/assets/Green Tech Hackathon1.jpeg",
-        "/assets/Green Tech Hackathon4.jpeg",
-      ],
-    },
-  ];
-
   return (
     <section
       id="awards"
       className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
     >
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-8 text-indigo-600 dark:text-indigo-400">
-          AWARDS
-        </h2>
+      <div className="max-w-6xl mx-auto text-center">
+        <motion.h2
+          className="text-4xl md:text-5xl font-extrabold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          Awards & Achievements
+        </motion.h2>
 
-        <ul className="space-y-12 max-w-4xl mx-auto text-left">
-          {awards.map((award, index) => (
-            <li
-              key={index}
-              className="border-l-4 border-indigo-600 pl-6 relative"
+        <div className="space-y-12">
+          {awards.map((award, idx) => (
+            <motion.div
+              key={idx}
+              className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 border-l-4 border-gradient-to-b from-indigo-600 via-purple-600 to-pink-500"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
             >
-              <span className="block text-indigo-600 font-semibold mb-2">
+              <span className="block text-indigo-600 dark:text-indigo-400 font-semibold mb-2">
                 {award.date}
               </span>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
                 {award.title}
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 mb-6">{award.description}</p>
+              <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                {award.description}
+              </p>
 
-              {/* Images container */}
-              <div className="flex gap-6 justify-center md:justify-start">
+              <div className="flex gap-6 justify-center md:justify-start flex-wrap">
                 {award.images.map((img, i) => (
-                  <img
+                  <motion.img
                     key={i}
                     src={img}
                     alt={`${award.title} - ${i + 1}`}
-                    className="w-40 h-40 object-cover rounded-lg shadow-md"
+                    className="w-40 h-40 object-cover rounded-xl shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
+                    whileHover={{ scale: 1.08 }}
                   />
                 ))}
               </div>
-            </li>
+            </motion.div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );

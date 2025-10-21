@@ -14,52 +14,42 @@ import Associative from "./pages/Associative";
 import Contact from "./pages/Contact";
 
 const App = () => {
+  // Dark mode initialization
   useEffect(() => {
-    if (localStorage.theme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    const theme = localStorage.theme || "light";
+    document.documentElement.classList.toggle("dark", theme === "dark");
   }, []);
 
+  // Array to map sections dynamically
+  const sections = [
+    { id: "home", component: <Hero /> },
+    { id: "about", component: <About /> },
+    { id: "education", component: <Education /> },
+    { id: "skills", component: <Skills /> },
+    { id: "experience", component: <Experience /> },
+    { id: "projects", component: <Projects /> },
+    { id: "certifications", component: <Certifications /> },
+    { id: "languages", component: <Languages /> },
+    { id: "awards", component: <Awards /> },
+    { id: "associative", component: <Associative /> },
+    { id: "contact", component: <Contact /> },
+  ];
+
   return (
-    <div className="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+    <div className="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 scroll-smooth transition-colors duration-700">
+      {/* Navbar */}
       <Navbar />
-      <main>
-        <section id="home">
-          <Hero />
-        </section>
-        <section id="about">
-          <About />
-        </section>
-        <section id="education">
-          <Education />
-        </section>
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="experience">
-          <Experience />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="certifications">
-          <Certifications />
-        </section>
-        <section id="languages">
-          <Languages />
-        </section>
-        <section id="awards">
-          <Awards />
-        </section>
-        <section id="associative">
-          <Associative />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
+
+      {/* Main Content */}
+      <main className="relative">
+        {sections.map(({ id, component }) => (
+          <div key={id} id={id}>
+            {component}
+          </div>
+        ))}
       </main>
+
+      {/* Footer */}
       <Footer />
     </div>
   );
