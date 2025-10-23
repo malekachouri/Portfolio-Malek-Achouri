@@ -18,7 +18,7 @@ const activities = [
   {
     role: "Active Member",
     organization: "IEEE ISIMA",
-    period: "2012",
+    period: "2022",
     location: "Mahdia, Tunisia",
     description:
       "Participated in planning and delivering AI-focused events in agriculture, including agenda management, inviting speakers, and supporting hands-on workshops demonstrating real-world AI applications.",

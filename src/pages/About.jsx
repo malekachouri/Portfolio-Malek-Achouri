@@ -32,23 +32,35 @@ const About = () => {
           About Me
         </motion.h2>
 
-        {/* Modern Intro */}
+        {/* Intro with photo */}
         <motion.div
-          className="text-center max-w-3xl mx-auto mb-20 text-gray-700 dark:text-gray-300 space-y-4 text-lg"
+          className="flex flex-col md:flex-row items-center gap-10 mb-20 text-gray-700 dark:text-gray-300"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
         >
-          <p>
-            Hi! I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 font-bold">Achouri Malek</span>, a <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 font-bold">Cloud & DevOps Engineer</span> from Sfax, Tunisia. I build automated, secure, and scalable infrastructures that empower businesses to innovate faster.
-          </p>
-          <p>
-            I’m a lifelong learner who adapts quickly to any environment and embraces challenges that create real value. From Kubernetes orchestration to CI/CD pipelines with ArgoCD, and monitoring with Prometheus & Grafana, I ensure cloud ecosystems run smoothly.
-          </p>
-          <p>
-            I’m always eager to take on new challenges that enhance my professional growth and contribute to innovative solutions.
-          </p>
+          {/* Text */}
+          <div className="md:flex-1 space-y-4 text-center md:text-left text-lg">
+            <p>
+              Hi! I’m <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 font-bold">Achouri Malek</span>, a <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 font-bold">Cloud & DevOps Engineer</span> from Sfax, Tunisia. I build automated, secure, and scalable infrastructures that empower businesses to innovate faster.
+            </p>
+            <p>
+              I’m a lifelong learner who adapts quickly to any environment and embraces challenges that create real value. From Kubernetes orchestration to CI/CD pipelines with ArgoCD, and monitoring with Prometheus & Grafana, I ensure cloud ecosystems run smoothly.
+            </p>
+            <p>
+              I’m always eager to take on new challenges that enhance my professional growth and contribute to innovative solutions.
+            </p>
+          </div>
+
+          {/* Photo */}
+          <div className="md:flex-1 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl border-4 border-indigo-500 mx-auto">
+            <img
+              src="/assets/malekkk.png"
+              alt="Achouri Malek"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </motion.div>
 
         {/* Highlights Grid */}
