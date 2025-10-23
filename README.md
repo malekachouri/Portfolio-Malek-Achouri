@@ -1,6 +1,12 @@
-# Achouri Malek - DevOps Portfolio
+# 🌩️ Achouri Malek — DevOps & Cloud Engineer Portfolio
+### 👋 Welcome!
 
-Crafted by Achouri Malek, this site distills DevOps mastery into a clean, fast experience—one scroll shows the skills, tools, and projects powering real-world cloud solutions.
+This is my personal **DevOps & Cloud Engineer portfolio**, designed and developed by **Achouri Malek**.  
+It highlights my journey, expertise, and achievements in **cloud automation, CI/CD pipelines, and infrastructure scalability**.  
+
+💡 Crafted with a focus on **modern design**, **performance**, and **real DevOps principles** — because a portfolio should run as smoothly as a pipeline.
+
+---
 
 ## 🚀 Technologies Used
 - React + Vite
