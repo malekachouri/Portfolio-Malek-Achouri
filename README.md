@@ -37,6 +37,8 @@ npm run build
 ```
 
 ## 🌐 Deployment
-Deployed using Netlify. Ensure `dist/` is published.
 
----
+This portfolio is live and hosted on **Netlify**.
+
+🔗 **Live Site:** [https://portfolio-malek-achouri.netlify.app](https://portfolio-malek-achouri.netlify.app)
+
