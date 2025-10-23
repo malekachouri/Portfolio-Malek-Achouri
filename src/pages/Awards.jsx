@@ -9,7 +9,7 @@ const awards = [
       "Awarded 1st place at the Green Tech Hackathon, part of the WE-SPICE program: 'Training Tomorrow’s Innovators'. Our team proposed a sustainable, tech-driven solution using IoT and AI technologies, competing with talented students worldwide.",
     images: [
       "/assets/Green Tech Hackathon1.jpeg",
-      "/assets/Green Tech Hackathon4.jpeg",
+      "/assets/certif-draxlmaier.png",
     ],
   },
 ];
@@ -58,8 +58,9 @@ const Awards = () => {
                       key={i}
                       src={img}
                       alt={`${award.title} - ${i + 1}`}
-                      className="w-full h-40 object-cover rounded-xl shadow-lg cursor-pointer transform transition-transform duration-300"
-                      whileHover={{ scale: 1.08 }}
+                      className="w-full object-contain rounded-xl shadow-lg cursor-pointer transform transition-transform duration-300"
+                      style={{ maxHeight: "300px" }}
+                      whileHover={{ scale: 1.05 }}
                     />
                   ))}
                 </div>
