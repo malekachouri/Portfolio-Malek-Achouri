@@ -20,9 +20,9 @@ const Awards = () => {
       id="awards"
       className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
     >
-      <div className="max-w-6xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto px-6 text-center">
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500"
+          className="text-4xl md:text-5xl font-extrabold mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 select-none"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,17 +51,19 @@ const Awards = () => {
                 {award.description}
               </p>
 
-              <div className="flex gap-6 justify-center md:justify-start flex-wrap">
-                {award.images.map((img, i) => (
-                  <motion.img
-                    key={i}
-                    src={img}
-                    alt={`${award.title} - ${i + 1}`}
-                    className="w-40 h-40 object-cover rounded-xl shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300"
-                    whileHover={{ scale: 1.08 }}
-                  />
-                ))}
-              </div>
+              {award.images && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center">
+                  {award.images.map((img, i) => (
+                    <motion.img
+                      key={i}
+                      src={img}
+                      alt={`${award.title} - ${i + 1}`}
+                      className="w-full h-40 object-cover rounded-xl shadow-lg cursor-pointer transform transition-transform duration-300"
+                      whileHover={{ scale: 1.08 }}
+                    />
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>

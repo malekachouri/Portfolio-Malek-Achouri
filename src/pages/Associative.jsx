@@ -32,9 +32,9 @@ const Associative = () => {
       id="associative"
       className="py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 transition-colors duration-700"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold mb-16 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 text-center"
+          className="text-4xl md:text-5xl font-extrabold mb-16 text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-700 via-purple-600 to-pink-500 select-none"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,7 +59,7 @@ const Associative = () => {
                 </h3>
                 <p className="text-lg text-indigo-600 font-semibold">{activity.organization}</p>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {activity.period} – {activity.location}
+                  {activity.period} | {activity.location}
                 </p>
               </div>
 

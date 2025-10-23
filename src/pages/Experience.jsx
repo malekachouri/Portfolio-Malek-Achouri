@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { FaCalendarAlt, FaBuilding } from "react-icons/fa";
 
 const experiences = [
   {
@@ -9,11 +10,11 @@ const experiences = [
     duration: "Feb 2025 – Jul 2025",
     projectDuration: "6 months",
     responsibilities: [
-      "Designed and automated a multi-node private cloud using OpenStack, Ceph, Kolla-Ansible, and Terraform, reducing deployment time by 40%.",
-      "Deployed a Kubernetes (K3s) cluster inside OpenStack VMs for reliable orchestration of containerized applications.",
-      "Integrated distributed services (MongoDB, MariaDB, Memcached, RabbitMQ) to enhance performance and modularity.",
-      "Implemented centralized monitoring with Prometheus, Grafana, Fluentd, and OpenSearch for improved incident detection and response.",
-      "Delivered a highly available, scalable, and secure cloud architecture ready for production workloads.",
+      "Engineered and automated multi-node cloud infrastructure using OpenStack, Ceph, Kolla-Ansible, and Terraform, reducing deployment time by 40%.",
+      "Provisioned a Kubernetes (K3s) cluster within OpenStack VMs for robust orchestration of containerized workloads.",
+      "Integrated distributed databases and caching systems (MongoDB, MariaDB, Memcached, RabbitMQ) for improved performance.",
+      "Implemented centralized monitoring and alerting with Prometheus, Grafana, Fluentd, and OpenSearch for proactive incident management.",
+      "Delivered a highly available, secure, and scalable architecture ready for production use.",
     ],
     technologies: [
       "OpenStack", "Ceph", "Kolla-Ansible", "Terraform", "Kubernetes (K3s)",
@@ -28,10 +29,10 @@ const experiences = [
     duration: "Jul 2024 – Aug 2024",
     projectDuration: "2 months",
     responsibilities: [
-      "Deployed a lightweight Kubernetes (K3s) cluster after evaluating KIND and Kubeadm for optimized development environments.",
-      "Automated deployments using GitLab CI/CD and ArgoCD based on GitOps practices.",
-      "Developed a custom deployment dashboard in ArgoCD to monitor real-time deployments.",
-      "Implemented proactive alerting and performance monitoring with Prometheus, Alertmanager, and Grafana.",
+      "Deployed a lightweight Kubernetes (K3s) cluster for optimized development and testing environments.",
+      "Automated CI/CD pipelines using GitLab CI/CD and ArgoCD, adhering to GitOps best practices.",
+      "Developed a custom ArgoCD dashboard to monitor deployments in real-time.",
+      "Implemented proactive performance monitoring and alerting with Prometheus, Alertmanager, and Grafana.",
     ],
     technologies: [
       "Kubernetes (K3s)", "KIND", "Kubeadm", "GitLab CI/CD", "ArgoCD",
@@ -45,9 +46,9 @@ const experiences = [
     duration: "Jun 2024 – Aug 2024",
     projectDuration: "3 months",
     responsibilities: [
-      "Deployed an OpenStack 'all-in-one' cloud using Packstack, comparing Kolla-Ansible and DevStack for performance and scalability.",
-      "Set up a Minikube Kubernetes cluster for testing and deploying web applications.",
-      "Used Docker for efficient containerization and resource optimization.",
+      "Provisioned an OpenStack 'all-in-one' environment using Packstack, evaluating Kolla-Ansible and DevStack for performance.",
+      "Configured a Minikube Kubernetes cluster for testing and deployment of web applications.",
+      "Utilized Docker to containerize applications efficiently and optimize resources.",
     ],
     technologies: [
       "OpenStack (Packstack, Kolla-Ansible, DevStack)", "Minikube", "Docker"
@@ -60,10 +61,10 @@ const experiences = [
     duration: "Jun 2023 – Aug 2023",
     projectDuration: "3 months",
     responsibilities: [
-      "Prepared and preprocessed medical images for brain tumor detection.",
-      "Applied the 3D U-Net model to segment regions of interest in brain scans.",
-      "Classified segmented images using deep learning models (VGG19, InceptionV3, ResNet50V2) to identify tumors.",
-      "Developed a Flask web interface to display results and assist healthcare professionals in analysis.",
+      "Prepared and preprocessed medical images for brain tumor detection using advanced techniques.",
+      "Applied 3D U-Net models to segment regions of interest in MRI scans.",
+      "Classified segmented images with VGG19, InceptionV3, and ResNet50V2 to detect tumors.",
+      "Developed a Flask-based web interface to visualize results and assist healthcare professionals.",
     ],
     technologies: [
       "Deep Learning", "Transfer Learning", "Flask", "U-Net", "VGG19", "InceptionV3", "ResNet50V2"
@@ -76,9 +77,9 @@ const experiences = [
     duration: "Feb 2022 – Jul 2022",
     projectDuration: "6 months",
     responsibilities: [
-      "Automated deployment and configuration of infrastructure components (Docker, DNS, essential services) using Ansible.",
-      "Deployed web applications across multiple machines with Ansible, ensuring consistency and reliability.",
-      "Maintained high availability through proactive maintenance and automation.",
+      "Automated deployment and configuration of Docker, DNS, and essential infrastructure using Ansible.",
+      "Ensured consistent, reliable application deployments across multiple machines.",
+      "Maintained high system availability through automation and proactive maintenance.",
     ],
     technologies: [
       "Ansible", "Docker", "DNS", "Infrastructure Automation"
@@ -91,8 +92,8 @@ const experiences = [
     duration: "Jun 2021 – Jul 2021",
     projectDuration: "2 months",
     responsibilities: [
-      "Resolved network issues, improving overall performance and reliability.",
-      "Implemented monitoring solutions to detect and resolve network anomalies.",
+      "Troubleshot network issues, enhancing overall performance and reliability.",
+      "Implemented monitoring solutions to proactively detect network anomalies.",
     ],
     technologies: [
       "TCP/IP", "SNMP", "ICMP"
@@ -100,7 +101,6 @@ const experiences = [
   },
 ];
 
-// Check icon component
 const CheckIcon = () => (
   <span className="inline-block text-green-500 mr-3 mt-1 font-bold select-none">✓</span>
 );
