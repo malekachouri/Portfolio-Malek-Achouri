@@ -1,44 +1,42 @@
-# 🌩️ Achouri Malek — DevOps & Cloud Engineer Portfolio
-### 👋 Welcome!
+# Achouri Malek, AI DevOps & Cloud Engineer
 
-This is my personal **DevOps & Cloud Engineer portfolio**, designed and developed by **Achouri Malek**.  
-It highlights my journey, expertise, and achievements in **cloud automation, CI/CD pipelines, and infrastructure scalability**.  
+Personal portfolio: **https://portfolio-malek-achouri.netlify.app/**
 
-💡 Crafted with a focus on **modern design**, **performance**, and **real DevOps principles** — because a portfolio should run as smoothly as a pipeline.
+Built with React 18, Vite 5, Tailwind CSS and Framer Motion. Dark-first design with a light theme, responsive, keyboard-accessible, and it respects `prefers-reduced-motion`.
 
----
+## Updating content
 
-## 🚀 Technologies Used
-- React + Vite
-- Tailwind CSS
-- Dark Mode Support
-- Netlify for Deployment
+All text (experience, projects, skills, certifications, education…) lives in **`src/data/content.js`**. Edit that file; the components only handle layout.
 
-## 📂 Folder Structure
+- CVs: `public/cv/` (EN + FR), linked from `profile.resumes`
+- Images: `public/images/` (WebP)
+- SEO: `index.html` (meta, Open Graph, JSON-LD), `public/og-image.png`, `public/sitemap.xml`
+
+## Project structure
+
 ```
-public/assets
 src/
-  components/
-  pages/
-  App.jsx
-  main.jsx
-index.css
+  data/content.js      # all portfolio content
+  sections/            # Hero, About, Projects, Experience, Skills, Certifications, Background, Contact
+  components/          # Navbar, Footer, Section, Reveal, Tags, ThemeToggle, ResumeLinks, SocialLinks
+  hooks/               # theme context, active-section tracking
 ```
 
-## 🔧 Getting Started
+## Development
+
 ```bash
-npm install
-npm run dev
+npm ci
+npm run dev       # http://localhost:5173
+npm run build     # production build in dist/
+npm run preview
 ```
 
-## 📦 Build
+## Delivery
+
+- **Netlify** (live site): configured in `netlify.toml`
+- **CI** (`.github/workflows/ci.yml`): `npm ci`, `npm audit` on runtime deps and build on every PR and push
+- **Container** (`.github/workflows/main.yml`): multi-stage Docker build → Trivy scan (fails on fixable CRITICAL) → push to Docker Hub tagged `latest` and the commit SHA. nginx serves the SPA with caching and security headers (`nginx.conf`).
+
 ```bash
-npm run build
+docker build -t portfolio . && docker run -p 8080:80 portfolio
 ```
-
-## 🌐 Deployment
-
-This portfolio is live and hosted on **Netlify**.
-
-🔗 **Live Site:** [https://portfolio-malek-achouri.netlify.app](https://portfolio-malek-achouri.netlify.app)
-
