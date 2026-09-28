@@ -1,65 +1,92 @@
-import React, { useState } from "react";
+import React from "react";
+import { FiArrowDownRight, FiMapPin } from "react-icons/fi";
 import Section from "../components/Section";
 import Reveal from "../components/Reveal";
 import Tags from "../components/Tags";
 import { experience } from "../data/content";
 
-const PREVIEW = 3;
-
 function Job({ job, delay }) {
-  const [expanded, setExpanded] = useState(false);
-  const hidden = job.highlights.length - PREVIEW;
-  const shown = expanded ? job.highlights : job.highlights.slice(0, PREVIEW);
-  const listId = `job-${job.company.replace(/\W+/g, "-").toLowerCase()}`;
-
   return (
-    <Reveal as="li" delay={delay} className="relative pl-8 sm:pl-10">
+    <Reveal as="li" delay={delay} className="relative pl-6 sm:pl-10">
       <span
-        className={`absolute left-0 top-1.5 h-3 w-3 -translate-x-[5px] rounded-full border-2 ${
-          job.current ? "border-accent bg-accent" : "border-line bg-bg"
+        className={`absolute left-0 top-7 h-3 w-3 -translate-x-[6.5px] rounded-full border-2 ${
+          job.current ? "border-accent bg-accent shadow-[0_0_0_4px_rgb(var(--accent)/0.2)]" : "border-line bg-bg"
         }`}
         aria-hidden="true"
       />
-      <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-        <h3 className="text-lg font-semibold">
-          {job.role} <span className="text-accent">· {job.company}</span>
-        </h3>
-        <p className="font-mono text-xs text-muted">{job.period}</p>
-      </div>
-      <p className="mt-1 text-sm text-muted">
-        {job.client && <>Client: {job.client} · </>}
-        {job.subtitle && <>{job.subtitle} · </>}
-        {job.location}
-      </p>
 
-      <ul id={listId} className="mt-4 space-y-2 text-sm leading-relaxed text-muted">
-        {shown.map((h) => (
-          <li key={h} className="flex gap-3">
-            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-muted" aria-hidden="true" />
-            <span>{h}</span>
-          </li>
-        ))}
-      </ul>
-      {hidden > 0 && (
-        <button
-          type="button"
-          onClick={() => setExpanded((e) => !e)}
-          aria-expanded={expanded}
-          aria-controls={listId}
-          className="mt-2 font-mono text-xs text-accent hover:underline"
-        >
-          {expanded ? "show less" : `+ ${hidden} more`}
-        </button>
-      )}
-      <Tags items={job.stack} className="mt-4" />
+      <article className="card p-5 sm:p-7">
+        <header className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+          <div>
+            <h3 className="text-lg font-semibold sm:text-xl">
+              {job.role} <span className="text-accent">· {job.company}</span>
+            </h3>
+            {(job.client || job.subtitle) && (
+              <p className="mt-1 text-sm text-fg/80">{job.client ? `Client: ${job.client}` : job.subtitle}</p>
+            )}
+          </div>
+          <div className="text-right font-mono text-xs text-muted">
+            <p className={job.current ? "text-accent" : ""}>{job.period}</p>
+            <p className="mt-1 inline-flex items-center gap-1">
+              <FiMapPin aria-hidden="true" /> {job.location}
+            </p>
+          </div>
+        </header>
+
+        {job.summary && <p className="mt-4 leading-relaxed text-muted">{job.summary}</p>}
+
+        {job.impact && (
+          <dl className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {job.impact.map((m) => (
+              <div key={m.label} className="flex flex-col rounded-lg border border-line bg-elevated px-3 py-2.5">
+                <dt className="order-2 text-xs leading-snug text-muted">{m.label}</dt>
+                <dd className="text-lg font-bold text-fg">{m.value}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+
+        <div className={`mt-6 grid gap-6 ${job.groups.length > 1 ? "lg:grid-cols-2" : ""}`}>
+          {job.groups.map((group) => (
+            <section key={group.title}>
+              <h4 className="font-mono text-xs font-semibold uppercase tracking-wide text-accent">{group.title}</h4>
+              <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-muted">
+                {group.items.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/70" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+
+        {job.keyProject && (
+          <a
+            href={job.keyProject.href}
+            className="mt-6 inline-flex items-center gap-2 rounded-lg border border-accent/40 bg-accent/10 px-3 py-2 text-sm font-semibold text-accent transition-colors hover:bg-accent/20"
+          >
+            Key project: {job.keyProject.title} <FiArrowDownRight aria-hidden="true" />
+          </a>
+        )}
+
+        <Tags items={job.stack} className="mt-6 border-t border-line pt-5" />
+      </article>
     </Reveal>
   );
 }
 
 export default function Experience() {
   return (
-    <Section id="experience" index="02" label="experience" title="Where I've worked">
-      <ol className="space-y-12 border-l border-line">
+    <Section
+      id="experience"
+      index="02"
+      label="experience"
+      title="Where I've worked"
+      intro="From Ansible automation and private clouds to a regulated, multi-account AWS foundation in production."
+    >
+      <ol className="space-y-8 border-l border-line">
         {experience.map((job, i) => (
           <Job key={`${job.company}-${job.period}`} job={job} delay={Math.min(i, 3) * 0.05} />
         ))}

@@ -5,9 +5,9 @@ import Reveal from "../components/Reveal";
 import Tags from "../components/Tags";
 import { featuredProjects, projects, projectCategories } from "../data/content";
 
-function FeaturedCard({ project, delay }) {
+function FeaturedCard({ project, delay, wide }) {
   return (
-    <Reveal delay={delay} as="article" className="card flex flex-col p-6 sm:p-8">
+    <Reveal id={project.id} delay={delay} as="article" className={`card flex flex-col p-6 sm:p-8 ${wide ? "lg:col-span-2" : ""}`}>
       <div className="flex flex-wrap items-baseline justify-between gap-2">
         <p className="font-mono text-xs text-accent">featured · {project.date}</p>
       </div>
@@ -60,11 +60,11 @@ export default function Projects() {
       index="03"
       label="projects"
       title="Selected work"
-      intro="Two recent builds that show how I work end to end, followed by earlier projects across cloud, CI/CD, security and software."
+      intro="Three recent builds that show how I work end to end, one from production at Neoshore and two personal projects, followed by earlier work across cloud, CI/CD, security and software."
     >
       <div className="grid gap-6 lg:grid-cols-2">
         {featuredProjects.map((p, i) => (
-          <FeaturedCard key={p.title} project={p} delay={i * 0.08} />
+          <FeaturedCard key={p.title} project={p} delay={i * 0.08} wide={i === 0} />
         ))}
       </div>
 
