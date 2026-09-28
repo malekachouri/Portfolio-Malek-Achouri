@@ -57,7 +57,7 @@ export default function Projects() {
   return (
     <Section
       id="projects"
-      index="02"
+      index="03"
       label="projects"
       title="Selected work"
       intro="Two recent builds that show how I work end to end, followed by earlier projects across cloud, CI/CD, security and software."

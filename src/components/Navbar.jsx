@@ -6,8 +6,8 @@ import useActiveSection from "../hooks/useActiveSection";
 
 export const navItems = [
   { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "certifications", label: "Certifications" },
   { id: "background", label: "Background" },

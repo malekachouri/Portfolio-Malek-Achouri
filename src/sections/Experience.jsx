@@ -58,7 +58,7 @@ function Job({ job, delay }) {
 
 export default function Experience() {
   return (
-    <Section id="experience" index="03" label="experience" title="Where I've worked">
+    <Section id="experience" index="02" label="experience" title="Where I've worked">
       <ol className="space-y-12 border-l border-line">
         {experience.map((job, i) => (
           <Job key={`${job.company}-${job.period}`} job={job} delay={Math.min(i, 3) * 0.05} />

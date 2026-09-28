@@ -286,8 +286,8 @@ export const skillGroups = [
 ];
 
 export const certifications = [
-  { title: "AI Infrastructure: LLM-D, vLLM and GPUs", issuer: "", year: "" },
-  { title: "Fundamentals of MLOps", issuer: "", year: "" },
+  { title: "AI Infrastructure: LLM-D, vLLM and GPUs", issuer: "KodeKloud", year: "", url: "https://learn.kodekloud.com/learn/certificate/2865396d-2d7c-40c9-bf8a-fa57e0f92131" },
+  { title: "Fundamentals of MLOps", issuer: "KodeKloud", year: "", url: "https://learn.kodekloud.com/learn/certificate/1e760a14-8436-41f5-a965-4009dfd99aeb" },
   { title: "AWS Cloud Practitioner (CLF-C02)", issuer: "Amazon Web Services", year: "" },
   { title: "DevSecOps – Kubernetes DevOps & Security", issuer: "KodeKloud", year: "2025", url: "https://learn.kodekloud.com/certificate/64740fd9-614b-4e35-afb4-121436ec17c5" },
   { title: "OpenShift 4", issuer: "KodeKloud", year: "2025", url: "https://learn.kodekloud.com/certificate/18642a09-0d7c-499d-8dd8-bcf10fa88ea4" },
