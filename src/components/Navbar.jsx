@@ -1,67 +1,100 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import ThemeToggle from "./ThemeToggle";
-import { FaBars, FaTimes } from "react-icons/fa";
+import ResumeLinks from "./ResumeLinks";
+import useActiveSection from "../hooks/useActiveSection";
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+export const navItems = [
+  { id: "about", label: "About" },
+  { id: "projects", label: "Projects" },
+  { id: "experience", label: "Experience" },
+  { id: "skills", label: "Skills" },
+  { id: "certifications", label: "Certifications" },
+  { id: "background", label: "Background" },
+  { id: "contact", label: "Contact" },
+];
 
-  const handleToggle = () => setMenuOpen(!menuOpen);
-  const handleClose = () => setMenuOpen(false);
+const sectionIds = navItems.map((item) => item.id);
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const active = useActiveSection(sectionIds);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  const linkClass = (id) =>
+    `rounded-md px-3 py-2 text-sm transition-colors ${
+      active === id ? "text-accent" : "text-muted hover:text-fg"
+    }`;
 
   return (
-    <header className="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        {/* Logo */}
-        <h1 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-          Achouri Malek
-        </h1>
+    <header
+      className={`sticky top-0 z-50 border-b transition-colors ${
+        scrolled || open ? "border-line bg-bg/85 backdrop-blur-md" : "border-transparent"
+      }`}
+    >
+      <div className="mx-auto flex h-16 max-w-page items-center justify-between px-4 sm:px-6">
+        <a href="#top" className="font-mono text-sm font-semibold" aria-label="Achouri Malek, back to top">
+          <span className="text-accent">~/</span>malek-achouri
+        </a>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-800 dark:text-gray-100">
-          <a href="#home" onClick={handleClose} className="hover:text-indigo-600">Home</a>
-          <a href="#about" onClick={handleClose} className="hover:text-indigo-600">About</a>
-          <a href="#education" onClick={handleClose} className="hover:text-indigo-600">Education</a>
-          <a href="#skills" onClick={handleClose} className="hover:text-indigo-600">Skills</a>
-          <a href="#experience" onClick={handleClose} className="hover:text-indigo-600">Experience</a>
-          <a href="#projects" onClick={handleClose} className="hover:text-indigo-600">Projects</a>
-          <a href="#certifications" onClick={handleClose} className="hover:text-indigo-600">Certifications</a>
-          <a href="#languages" onClick={handleClose} className="hover:text-indigo-600">Languages</a>
-          <a href="#awards" onClick={handleClose} className="hover:text-indigo-600">Awards</a>
-          <a href="#associative" onClick={handleClose} className="hover:text-indigo-600">Associative</a>
-          <a href="#contact" onClick={handleClose} className="hover:text-indigo-600">Contact</a>
-          <ThemeToggle />
+        <nav aria-label="Main" className="hidden lg:block">
+          <ul className="flex items-center">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} className={linkClass(item.id)} aria-current={active === item.id ? "true" : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
 
-        {/* Hamburger Icon */}
-        <div
-          className="md:hidden text-gray-800 dark:text-white text-2xl cursor-pointer"
-          onClick={handleToggle}
-        >
-          {menuOpen ? <FaTimes /> : <FaBars />}
+        <div className="flex items-center gap-2">
+          <div className="hidden sm:block">
+            <ResumeLinks compact />
+          </div>
+          <ThemeToggle />
+          <button
+            type="button"
+            className="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted lg:hidden"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((o) => !o)}
+          >
+            {open ? <FiX size={18} /> : <FiMenu size={18} />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-900 px-6 pb-4 pt-2 text-center space-y-4 shadow">
-          <a href="#home" onClick={handleClose} className="block hover:text-indigo-600">Home</a>
-          <a href="#about" onClick={handleClose} className="block hover:text-indigo-600">About</a>
-          <a href="#education" onClick={handleClose} className="block hover:text-indigo-600">Education</a>
-          <a href="#skills" onClick={handleClose} className="block hover:text-indigo-600">Skills</a>
-          <a href="#experience" onClick={handleClose} className="block hover:text-indigo-600">Experience</a>
-          <a href="#projects" onClick={handleClose} className="block hover:text-indigo-600">Projects</a>
-          <a href="#certifications" onClick={handleClose} className="block hover:text-indigo-600">Certifications</a>
-          <a href="#languages" onClick={handleClose} className="block hover:text-indigo-600">Languages</a>
-          <a href="#awards" onClick={handleClose} className="block hover:text-indigo-600">Awards</a>
-          <a href="#associative" onClick={handleClose} className="block hover:text-indigo-600">Associative</a>
-          <a href="#contact" onClick={handleClose} className="block hover:text-indigo-600">Contact</a>
-          <div className="flex justify-center">
-            <ThemeToggle />
+      {open && (
+        <nav id="mobile-menu" aria-label="Mobile" className="border-t border-line px-4 pb-4 lg:hidden">
+          <ul className="grid gap-1 pt-2">
+            {navItems.map((item) => (
+              <li key={item.id}>
+                <a href={`#${item.id}`} onClick={() => setOpen(false)} className={`block ${linkClass(item.id)}`}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-3 sm:hidden">
+            <ResumeLinks />
           </div>
-        </div>
+        </nav>
       )}
     </header>
   );
-};
-
-export default Navbar;
+}

@@ -1,0 +1,380 @@
+// All portfolio content lives here. Edit this file to update the site; components only handle layout.
+
+export const profile = {
+  name: "Achouri Malek",
+  title: "AI DevOps & Cloud Engineer",
+  location: "Tunis, Tunisia",
+  email: "malakachouri200@gmail.com",
+  summary:
+    "I automate how software and infrastructure are built, deployed and monitored, and I dig into production issues until they make sense. Hands-on with AWS, Terraform, Kubernetes and CI/CD in production for international clients. Now focused on making AI agents reliable in production: testable, observable and safe for real users.",
+  about: [
+    "I'm a Cloud & DevOps engineer with a telecommunications engineering degree (Networks, Infrastructure & Cloud) from ENET'Com Sfax. Today I design and run AWS infrastructure with Terraform for clients in the UK, France, Belgium and Italy: multi-environment IaC, DevSecOps pipelines, secure networking and centralized monitoring.",
+    "Before that I built a distributed OpenStack private cloud with Ceph and Kubernetes at KPIT, and GitOps delivery with Argo CD at Sofrecom. My current focus is where platform engineering meets AI: running LLM agents and MCP servers with the same rigor as any production workload, with tests, CI gates, least-privilege access and metrics.",
+  ],
+  resumes: [
+    { label: "English", lang: "EN", href: "/cv/Achouri_Malek_AI_DevOps_Cloud_Engineer_EN.pdf" },
+    { label: "Français", lang: "FR", href: "/cv/Achouri_Malek_Ingenieure_AI_DevOps_Cloud_FR.pdf" },
+  ],
+  links: {
+    linkedin: "https://www.linkedin.com/in/achouri-malek/",
+    gitlab: "https://gitlab.com/malekachouri025",
+    github: "https://github.com/malekachouri",
+  },
+};
+
+export const metrics = [
+  { value: "99.9%", label: "availability on a private OpenStack cloud" },
+  { value: "−40%", label: "deployment time with Kolla-Ansible & Terraform" },
+  { value: "30–40%", label: "public-cloud spend cut" },
+  { value: "−50%", label: "incident detection time with Prometheus alerting" },
+];
+
+export const experience = [
+  {
+    role: "Cloud & DevOps Engineer",
+    company: "Neoshore Tunisie",
+    client: "Hilbert Investment Solutions",
+    period: "01/2026 – Present",
+    location: "Tunis, Tunisia",
+    current: true,
+    highlights: [
+      "Architected and automated highly available, secure AWS infrastructure with Terraform across separate Development, Staging and Production environments.",
+      "Built modular, reusable IaC for consistent multi-account and multi-region deployments, reducing configuration drift between environments.",
+      "Industrialized DevSecOps CI/CD pipelines with automated testing, security scanning and zero-downtime deployments.",
+      "Engineered secure AWS networks (Site-to-Site VPN, ALB, WAF, Route 53, Cato Networks) and led the resolution of critical production connectivity incidents.",
+      "Centralized monitoring and audit logging with CloudWatch and CloudTrail, and defined RTO/RPO objectives from the design stage.",
+      "Hardened Linux servers with Ansible and enforced least privilege through AWS IAM and SSM.",
+      "Deployed Multi-AZ Amazon RDS and SFTP infrastructure for clients in Belgium and Italy.",
+      "Supported AWS infrastructure for international clients in the UK, France, Belgium and Italy.",
+    ],
+    stack: ["AWS", "Terraform", "Ansible", "Docker", "CloudWatch", "CloudTrail", "WAF", "Route 53", "RDS", "IAM/SSM"],
+  },
+  {
+    role: "Cloud & DevOps Engineer",
+    company: "KPIT Technologies",
+    subtitle: "Distributed private cloud with OpenStack for resilient apps on Kubernetes",
+    period: "02/2025 – 07/2025",
+    location: "Sfax, Tunisia",
+    highlights: [
+      "Architected a multi-node private cloud with OpenStack, Ceph and Kolla-Ansible, reducing deployment time by 40%.",
+      "Cut public-cloud spend by 30–40% while maintaining 99.9% availability.",
+      "Provisioned VMs and networks with Terraform, reaching 100% automated deployments.",
+      "Engineered segmented virtual networks (VXLAN, NAT, security groups) and made the control plane highly available with HAProxy and Keepalived.",
+      "Ran a K3s cluster on OpenStack VMs and centralized metrics and logs with Prometheus, Grafana, Fluentd and OpenSearch.",
+    ],
+    stack: ["OpenStack", "Ceph", "Kolla-Ansible", "Terraform", "K3s", "HAProxy", "Prometheus", "OpenSearch"],
+  },
+  {
+    role: "Platform Engineer",
+    company: "Sofrecom Tunisia",
+    subtitle: "Argo CD dashboard development",
+    period: "07/2024 – 08/2024",
+    location: "Sfax, Tunisia",
+    highlights: [
+      "Set up a K3s cluster and automated deployments with GitLab CI/CD and Argo CD, reducing deployment errors by 40%.",
+      "Introduced a GitOps workflow that keeps cluster state in sync with Git across development and testing environments.",
+      "Built a custom Argo CD dashboard and alerting with Prometheus, Grafana and Alertmanager, cutting incident detection time by 50%.",
+    ],
+    stack: ["K3s", "GitLab CI/CD", "Argo CD", "Prometheus", "Grafana", "Alertmanager"],
+  },
+  {
+    role: "Cloud & DevOps Engineer",
+    company: "Primatec Engineering",
+    subtitle: "OpenStack cloud deployment & containerization",
+    period: "06/2024 – 08/2024",
+    location: "Sfax, Tunisia",
+    highlights: [
+      "Stood up a private OpenStack cloud and benchmarked 3 installation methods (Packstack, Kolla-Ansible, DevStack).",
+      "Containerized web applications with Docker and ran them on Minikube.",
+      "Wrote setup documentation to support reproducibility and knowledge transfer.",
+    ],
+    stack: ["OpenStack", "Packstack", "Docker", "Minikube"],
+  },
+  {
+    role: "AI Engineer",
+    company: "ATMS Lab Research Unit",
+    subtitle: "Brain tumor detection with deep learning",
+    period: "06/2023 – 08/2023",
+    location: "Sfax, Tunisia",
+    highlights: [
+      "Built an AI pipeline: preprocessing, 3D U-Net segmentation and classification with VGG19, InceptionV3 and ResNet50V2.",
+      "Created a Flask web interface to visualize results for medical analysis.",
+    ],
+    stack: ["Python", "3D U-Net", "Transfer learning", "Flask"],
+  },
+  {
+    role: "DevOps Engineer",
+    company: "GENIOS",
+    subtitle: "Deployment automation with Ansible",
+    period: "02/2022 – 05/2022",
+    location: "Mahdia, Tunisia",
+    highlights: [
+      "Automated multi-machine provisioning and rollout (Docker, DNS, critical services) with Ansible playbooks.",
+      "Standardized configuration management for repeatable deployments across multiple servers.",
+    ],
+    stack: ["Ansible", "Docker", "DNS", "Linux"],
+  },
+  {
+    role: "Telecommunications Intern",
+    company: "Tunisie Telecom",
+    period: "06/2021 – 07/2021",
+    location: "Sidi Bouzid, Tunisia",
+    highlights: [
+      "Troubleshot network issues and set up monitoring to detect network anomalies early.",
+    ],
+    stack: ["TCP/IP", "SNMP", "ICMP"],
+  },
+];
+
+export const featuredProjects = [
+  {
+    title: "Conversational AI Agent Service",
+    date: "09/2026",
+    tagline: "A customer-support agent built and shipped like a production service.",
+    flow: ["FastAPI", "Claude API", "Tool calls", "PostgreSQL", "Prometheus"],
+    highlights: [
+      "Customer-support agent in Python/FastAPI on the Claude API with tool calling (order lookup, escalation to a human) and multi-turn state in PostgreSQL. Every tool call is validated against a JSON schema.",
+      "Test suite replays realistic multi-turn conversations from JSON fixtures and checks outcomes (tools called, arguments, final database state) rather than exact wording.",
+      "A deterministic mock LLM runs all 23 tests in CI in about 2 seconds with no API key. The same scenarios run against the real model or a live container.",
+      "GitHub Actions: tests against the built container, Trivy gate on HIGH/CRITICAL, keyless push to GHCR with OIDC-signed provenance, non-root multi-stage image.",
+    ],
+    stats: [
+      { value: "23", label: "replay tests" },
+      { value: "~2s", label: "CI test run" },
+      { value: "0", label: "stored secrets" },
+    ],
+    stack: ["Python", "FastAPI", "Claude API", "PostgreSQL", "pytest", "Docker", "GitHub Actions", "Trivy", "Prometheus"],
+  },
+  {
+    title: "Cloud-native GitOps Platform on AKS",
+    date: "07/2026",
+    tagline: "Secretless Azure platform delivered end to end through Git.",
+    flow: ["Terraform", "GitHub Actions", "ACR", "Argo CD", "AKS"],
+    highlights: [
+      "Provisioned AKS, ACR and Key Vault with Terraform, using Azure Workload Identity for secretless authentication.",
+      "GitHub Actions pipeline with multi-stage Docker builds, Trivy scanning and OIDC-based push to a private registry.",
+      "Delivered with Argo CD (app-of-apps): Helm releases, ingress-nginx and cert-manager with automatic Let's Encrypt TLS.",
+      "Deployed a Python MCP server on Kubernetes exposing cluster-introspection tools to an LLM agent under least-privilege RBAC.",
+    ],
+    stats: [
+      { value: "App-of-apps", label: "GitOps pattern" },
+      { value: "OIDC", label: "no stored credentials" },
+      { value: "MCP", label: "LLM agent tools" },
+    ],
+    stack: ["Azure", "AKS", "Terraform", "Key Vault", "Argo CD", "Helm", "cert-manager", "Trivy", "MCP"],
+  },
+];
+
+export const projectCategories = ["All", "Cloud & IaC", "GitOps & CI/CD", "Security", "Software", "Networking", "QA"];
+
+export const projects = [
+  {
+    title: "MERN Application on Azure",
+    date: "11/2025",
+    category: "Cloud & IaC",
+    description:
+      "Containerized MERN app on AKS with Azure DevOps CI/CD and GitOps, Ansible automation, Prometheus/Grafana/Azure Monitor observability, and secrets in Key Vault with RBAC.",
+    stack: ["AKS", "Docker", "Azure DevOps", "Ansible", "Key Vault", "Grafana"],
+  },
+  {
+    title: "GitOps Automation with Azure DevOps",
+    date: "10/2025 – Present",
+    category: "GitOps & CI/CD",
+    description:
+      "Continuous delivery from code to cloud with GitOps workflows in Azure, real-time monitoring and rollback pipelines, and version-controlled IaC.",
+    stack: ["Azure DevOps", "GitOps", "Kubernetes", "YAML pipelines"],
+  },
+  {
+    title: "TunisiePara Web Application Testing",
+    date: "10/2025",
+    category: "QA",
+    description:
+      "Functional and UAT testing of an e-commerce parapharmacy platform: user stories, test cases and Gherkin scenarios for critical business workflows, plus post-deployment validation.",
+    stack: ["Jira", "Xray", "Gherkin", "UAT"],
+  },
+  {
+    title: "Terraform & Azure DevOps Automation",
+    date: "09/2025",
+    category: "Cloud & IaC",
+    description:
+      "Enterprise-grade Azure infrastructure with reusable Terraform modules, multi-environment management and Azure DevOps pipelines for Dev/Test/Prod.",
+    stack: ["Terraform", "Azure", "Azure DevOps"],
+  },
+  {
+    title: "Secure Authentication & Authorization",
+    date: "11/2024 – 01/2025",
+    category: "Security",
+    description:
+      "Authentication and authorization system with Flask and Keycloak (OIDC, OAuth2), with users and roles managed in a custom realm.",
+    stack: ["Flask", "Keycloak", "OIDC", "OAuth2", "RBAC"],
+  },
+  {
+    title: "CI/CD Automation with AWS Step Functions",
+    date: "09/2024 – 01/2025",
+    category: "GitOps & CI/CD",
+    description: "Workflow automation with AWS Step Functions, Lambda and CloudFormation, with CI/CD integration through Boto3.",
+    stack: ["Step Functions", "Lambda", "CloudFormation", "Boto3"],
+  },
+  {
+    title: "Pharmacy Management Web Application",
+    date: "10/2024 – 12/2024",
+    category: "Software",
+    description: "Web app with an Angular frontend and a Node.js/Express backend, MongoDB for product management and JWT authentication.",
+    stack: ["Angular", "Node.js", "Express", "MongoDB", "JWT"],
+  },
+  {
+    title: "GitOps with Argo CD",
+    date: "09/2023 – 05/2024",
+    category: "GitOps & CI/CD",
+    description:
+      "Administered Kubernetes clusters (K3s, Kubeadm, Minikube) and automated CI/CD and IaC with Argo CD and Jenkins following GitOps principles.",
+    stack: ["Argo CD", "Jenkins", "K3s", "Kubeadm", "Helm"],
+  },
+  {
+    title: "FTTH-GEPON Network Implementation",
+    date: "04/2023 – 05/2023",
+    category: "Networking",
+    description:
+      "FTTH-GEPON architecture with an LTE-2X OLT (2×64 subscribers), NTE-2C ONUs and 1×4/1×16 splitters: data and video topologies, OLT port setup and optical-loss simulation.",
+    stack: ["GEPON", "OLT/ONU", "Optical budget"],
+  },
+  {
+    title: "Sales Management System",
+    date: "03/2023 – 05/2023",
+    category: "Software",
+    description: "Java application (Eclipse) to manage and track commercial transactions.",
+    stack: ["Java", "Eclipse"],
+  },
+  {
+    title: "Flow Optimization in Python",
+    date: "02/2023 – 03/2023",
+    category: "Software",
+    description: "Graph algorithms for maximum-flow optimization on real-world scenarios, developed and simulated on Google Colab.",
+    stack: ["Python", "Graph algorithms", "Colab"],
+  },
+  {
+    title: "CI/CD with GitHub Actions & Kubernetes",
+    date: "01/2023 – 02/2023",
+    category: "GitOps & CI/CD",
+    description: "CI/CD pipeline with GitHub Actions for a containerized application, with automated deployments to Kubernetes.",
+    stack: ["GitHub Actions", "Docker", "Kubernetes"],
+  },
+  {
+    title: "Kubernetes Private Cloud with OpenShift",
+    date: "02/2021 – 05/2021",
+    category: "Cloud & IaC",
+    description: "Open-source Kubernetes platform integrating Red Hat OpenShift to build a reliable, scalable private cloud.",
+    stack: ["Kubernetes", "OpenShift"],
+  },
+];
+
+export const skillGroups = [
+  {
+    title: "AI agents & LLMs",
+    items: ["Claude API (Anthropic SDK)", "Tool / function calling", "MCP", "Conversation replay testing", "Agent evaluation", "JSON-schema tool inputs", "Deep learning (CNNs, 3D U-Net)"],
+  },
+  { title: "Cloud platforms", items: ["AWS", "Azure", "OpenStack", "Ceph", "VMware"] },
+  { title: "Containers & orchestration", items: ["Docker", "Kubernetes", "AKS", "K3s", "OpenShift", "Helm", "Kustomize"] },
+  { title: "IaC & CI/CD", items: ["Terraform", "Ansible", "Argo CD", "GitLab CI/CD", "GitHub Actions", "Jenkins", "Azure DevOps", "Bitbucket"] },
+  { title: "Observability", items: ["Prometheus", "Grafana", "Alertmanager", "CloudWatch", "CloudTrail", "Fluentd", "ELK", "OpenSearch"] },
+  {
+    title: "Networking & security",
+    items: ["VPC / SG / NACLs", "Site-to-Site VPN", "WAF", "Load balancers", "HAProxy", "Keepalived", "IAM / SSM", "Keycloak", "RBAC", "cert-manager / TLS", "Trivy", "DevSecOps"],
+  },
+  { title: "Python & backend", items: ["Python", "FastAPI", "Flask", "pytest", "SQLAlchemy", "PostgreSQL", "REST APIs", "Bash", "PowerShell", "Node.js", "Angular", "Java"] },
+  { title: "Testing & QA", items: ["Postman", "Selenium", "Jira Xray", "Gherkin (BDD)", "Manual testing"] },
+];
+
+export const certifications = [
+  { title: "AI Infrastructure: LLM-D, vLLM and GPUs", issuer: "", year: "" },
+  { title: "Fundamentals of MLOps", issuer: "", year: "" },
+  { title: "AWS Cloud Practitioner (CLF-C02)", issuer: "Amazon Web Services", year: "" },
+  { title: "DevSecOps – Kubernetes DevOps & Security", issuer: "KodeKloud", year: "2025", url: "https://learn.kodekloud.com/certificate/64740fd9-614b-4e35-afb4-121436ec17c5" },
+  { title: "OpenShift 4", issuer: "KodeKloud", year: "2025", url: "https://learn.kodekloud.com/certificate/18642a09-0d7c-499d-8dd8-bcf10fa88ea4" },
+  { title: "Git for Beginners", issuer: "KodeKloud", year: "2025", url: "https://learn.kodekloud.com/certificate/2bc5e007-75f7-4d67-815b-ac7cae256d3e" },
+  { title: "GitOps with Argo CD", issuer: "KodeKloud", year: "2024", url: "https://learn.kodekloud.com/certificate/2D0D59264456-2DF639B82AE7-2D0D52F33408" },
+  { title: "GitLab CI/CD: Architecting, Deploying, and Optimizing Pipelines", issuer: "KodeKloud", year: "2024", url: "https://learn.kodekloud.com/certificate/e1661c52-270e-46ca-b5bf-182f01a6e0e8" },
+  { title: "Terraform Basics Training Course", issuer: "KodeKloud", year: "2024", url: "https://learn.kodekloud.com/certificate/19b35371-1420-4dd6-ba0f-14cec2ac4be5" },
+  { title: "Introduction to AWS Data Pipeline", issuer: "KodeKloud", year: "2024", url: "https://learn.kodekloud.com/certificate/ca42687d-9a22-4ed4-9609-324f87ae415f" },
+  { title: "Introduction to Containers with Docker, Kubernetes and OpenShift", issuer: "", year: "" },
+  {
+    title: "Getting Started with Jenkins",
+    issuer: "Simplilearn",
+    year: "2024",
+    url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzM5IiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvdGh1bWJfNTEwMjkxOV8xNzE0NDkzMTg5LnBuZyIsInVzZXJuYW1lIjoiQWNob3VyaSBNYWxlayJ9&utm_source=shared-certificate",
+  },
+  { title: "Getting Started with Ansible", issuer: "Simplilearn", year: "2024" },
+  {
+    title: "Introduction to Kubernetes",
+    issuer: "Simplilearn",
+    year: "2023",
+    url: "https://www.simplilearn.com/skillup-certificate-landing?token=eyJjb3Vyc2VfaWQiOiIxNzQyIiwiY2VydGlmaWNhdGVfdXJsIjoiaHR0cHM6XC9cL2NlcnRpZmljYXRlcy5zaW1wbGljZG4ubmV0XC9zaGFyZVwvdGh1bWJfNTA0MzI0OV8xNzEyOTUwNzUyLnBuZyIsInVzZXJuYW1lIjoiYWNob3VyaSBtYWxlayAifQ%3D%3D",
+  },
+  {
+    title: "Artificial Intelligence on Microsoft Azure",
+    issuer: "Microsoft · Coursera",
+    year: "2023",
+    url: "https://www.coursera.org/account/accomplishments/verify/NF4T4QRA6JYY",
+  },
+  { title: "CCNA1", issuer: "Cisco Networking Academy", year: "" },
+];
+
+export const education = [
+  {
+    degree: "Engineering degree in Telecommunications",
+    focus: "Networks, Infrastructure & Cloud (RIC)",
+    school: "National School of Electronics and Telecommunications of Sfax (ENET'Com)",
+    period: "2022 – 2025",
+    location: "Sfax, Tunisia",
+  },
+  {
+    degree: "Bachelor's in Computer Science & Communication Technologies",
+    school: "Higher Institute of Applied Sciences and Technology of Mahdia (ISSAT Mahdia)",
+    period: "2019 – 2022",
+    location: "Mahdia, Tunisia",
+  },
+];
+
+export const award = {
+  title: "1st Place – Green Tech Hackathon",
+  context: "WE-SPICE Program, innovation training by TU Chemnitz & DRÄXLMAIER",
+  date: "17/10/2024",
+  description:
+    "Our team won first place with a sustainable, tech-driven solution combining IoT and AI, competing against students from several countries.",
+  images: [
+    { src: "/images/green-tech-hackathon.webp", alt: "Green Tech Hackathon team on stage" },
+    { src: "/images/green-tech-certificate.webp", alt: "Green Tech Hackathon first-place certificate" },
+  ],
+};
+
+export const volunteering = [
+  {
+    role: "General Secretary",
+    organization: "Microsoft Tech Club – ENET'Com",
+    period: "09/2023 – 2026",
+    location: "Sfax, Tunisia",
+    description: "Coordinated club administration and communication with partners, and organized tech events, workshops and hackathons.",
+    images: [
+      { src: "/images/mstc-event-1.webp", alt: "Microsoft Tech Club event" },
+      { src: "/images/mstc-event-3.webp", alt: "Microsoft Tech Club workshop" },
+    ],
+  },
+  {
+    role: "Active Member",
+    organization: "IEEE ENET'Com",
+    period: "09/2022 – 2026",
+    location: "Sfax, Tunisia",
+    description: "Organized an event on artificial intelligence and agriculture at ISSAT Mahdia: agenda, speakers and hands-on workshops.",
+    images: [
+      { src: "/images/ieee-event-1.webp", alt: "IEEE event on AI and agriculture" },
+      { src: "/images/ieee-event-2.webp", alt: "IEEE event participants" },
+    ],
+  },
+];
+
+export const languages = [
+  { name: "Arabic", level: "Native" },
+  { name: "French", level: "Fluent" },
+  { name: "English", level: "Proficient" },
+  { name: "Italian", level: "Basic" },
+];

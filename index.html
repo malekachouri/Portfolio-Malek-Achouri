@@ -1,13 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Achouri Malek  Portfolio" />
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
-    <title>Achouri Malek  | DevOps Portfolio</title>
+    <title>Achouri Malek | AI DevOps & Cloud Engineer</title>
+    <meta
+      name="description"
+      content="Achouri Malek, AI DevOps & Cloud Engineer. AWS, Azure, Terraform, Kubernetes, GitOps with Argo CD, DevSecOps CI/CD and production-ready AI agents."
+    />
+    <meta name="author" content="Achouri Malek" />
+    <meta name="theme-color" content="#090b10" />
+    <link rel="canonical" href="https://portfolio-malek-achouri.netlify.app/" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-malek-achouri.netlify.app/" />
+    <meta property="og:title" content="Achouri Malek | AI DevOps & Cloud Engineer" />
+    <meta
+      property="og:description"
+      content="Cloud infrastructure, GitOps and DevSecOps pipelines on AWS, Azure and Kubernetes, and AI agents that are reliable in production."
+    />
+    <meta property="og:image" content="https://portfolio-malek-achouri.netlify.app/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Achouri Malek",
+        "jobTitle": "AI DevOps & Cloud Engineer",
+        "url": "https://portfolio-malek-achouri.netlify.app/",
+        "address": { "@type": "PostalAddress", "addressCountry": "TN" },
+        "sameAs": [
+          "https://www.linkedin.com/in/achouri-malek/",
+          "https://gitlab.com/malekachouri025",
+          "https://github.com/malekachouri"
+        ]
+      }
+    </script>
+
+    <!-- Apply the saved theme before first paint to avoid a flash. Dark is the default. -->
+    <script>
+      try {
+        if (localStorage.getItem("theme") === "light") document.documentElement.classList.remove("dark");
+      } catch (e) {}
+    </script>
   </head>
-  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white">
+  <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

@@ -1,45 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Moon, Sun } from "react-feather"; // Icons from react-feather
+import React from "react";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { useTheme } from "../hooks/useTheme";
 
-const ThemeToggle = () => {
-  const [theme, setTheme] = useState("light");
-
-  // Load theme from localStorage or system preference
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-      document.documentElement.classList.add("dark");
-      setTheme("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      setTheme("light");
-    }
-  }, []);
-
-  // Toggle function
-  const toggleTheme = () => {
-    if (theme === "light") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setTheme("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setTheme("light");
-    }
-  };
-
+export default function ThemeToggle() {
+  const { theme, toggle } = useTheme();
+  const isDark = theme === "dark";
   return (
     <button
-      onClick={toggleTheme}
-      className="p-2 rounded-md bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition"
-      aria-label="Toggle theme"
+      type="button"
+      onClick={toggle}
+      className="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted transition-colors hover:text-accent"
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
     >
-      {theme === "dark" ? <Sun size={18} className="text-yellow-300" /> : <Moon size={18} className="text-gray-800" />}
+      {isDark ? <FiSun size={16} /> : <FiMoon size={16} />}
     </button>
   );
-};
-
-export default ThemeToggle;
+}

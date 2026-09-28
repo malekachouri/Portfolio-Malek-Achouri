@@ -2,12 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Smooth scroll + padding for sticky navbar */
-html {
-  scroll-behavior: smooth;
+/* Colour tokens (RGB channels so Tailwind opacity modifiers work). Dark is the default. */
+:root {
+  --bg: 248 250 252;
+  --surface: 255 255 255;
+  --elevated: 241 245 249;
+  --line: 226 232 240;
+  --fg: 15 23 42;
+  --muted: 71 85 105;
+  --accent: 13 148 136;
+  --accent-fg: 255 255 255;
+  color-scheme: light;
 }
 
-:root {
-  scroll-padding-top: 5rem; /* Adjust if your navbar is taller */
+.dark {
+  --bg: 9 11 16;
+  --surface: 17 20 27;
+  --elevated: 24 28 37;
+  --line: 38 44 56;
+  --fg: 229 231 235;
+  --muted: 148 158 175;
+  --accent: 45 212 191;
+  --accent-fg: 4 47 46;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-bg text-fg font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent/30;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-bg;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-md border border-line bg-elevated px-2 py-0.5 font-mono text-xs text-muted;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-accent-fg hover:bg-accent/90;
+  }
+
+  .btn-ghost {
+    @apply btn border border-line bg-surface text-fg hover:border-accent/60 hover:text-accent;
+  }
+
+  .link {
+    @apply text-accent underline-offset-4 hover:underline;
+  }
+
+  /* Faint grid behind the hero, fading out towards the bottom */
+  .bg-grid {
+    background-image: linear-gradient(rgb(var(--line) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--line) / 0.5) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
 }
