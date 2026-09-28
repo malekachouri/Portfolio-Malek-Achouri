@@ -38,45 +38,99 @@ export const experience = [
     location: "Tunis, Tunisia",
     current: true,
     summary:
-      "I build and run AWS infrastructure for a financial-services client with teams in the UK, France, Belgium and Italy, from infrastructure as code to CI/CD, networking and day-to-day operations.",
+      "Cloud & DevOps engineer on the AWS platform of a financial-services client with teams and customers in the UK, France, Belgium and Italy. I build and run the infrastructure as code, the delivery pipelines, the network and the day-to-day operations.",
     impact: [
-      { value: "15", label: "environments on Terraform" },
-      { value: "4", label: "countries supported" },
-      { value: "0", label: "stored CI credentials" },
+      { value: "40", label: "reusable Terraform modules" },
+      { value: "15", label: "Terraform environments" },
+      { value: "9", label: "workload accounts (FR / UK / BE)" },
+      { value: "0", label: "long-lived CI credentials" },
     ],
-    highlights: [
-      { lead: "Infrastructure as Code", text: "Built multi-account AWS infrastructure with Terraform: reusable modules and separate Dev, Staging and Production environments, with drift detection." },
-      { lead: "CI/CD", text: "Automated delivery with Bitbucket Pipelines and OIDC: tests, linting and plan review on every change, and approval before production." },
-      { lead: "Networking", text: "Set up Transit Gateway, VPCs, Site-to-Site VPN, load balancers, WAF and Route 53, and resolved critical production connectivity incidents." },
-      { lead: "Reliability", text: "Set up CloudWatch and CloudTrail monitoring, and cross-region backups with restore tests and RTO/RPO targets." },
-      { lead: "Client delivery", text: "Deployed Multi-AZ Amazon RDS databases and SFTP infrastructure for clients in Belgium and Italy." },
-      { lead: "Automation", text: "Automated server provisioning, patching and hardening with Ansible and AWS SSM, and Docker-based application deployments." },
+    groups: [
+      {
+        title: "Infrastructure as Code",
+        items: [
+          "Built the client's multi-account AWS infrastructure in Terraform: AWS Organizations and 9 workload accounts across France, the UK and Belgium (Production, Staging, Sandbox).",
+          "Wrote 40 reusable Terraform modules, including one parameterized module that gives every workload account the same baseline (VPC, logging, budgets, deploy role).",
+          "Set up the Terraform remote state backend, separate environments (Development, Staging, Production) and scheduled drift detection to keep them consistent.",
+        ],
+      },
+      {
+        title: "CI/CD & GitOps",
+        items: [
+          "Built Bitbucket Pipelines for the infrastructure: format and validate, Terraform tests, TFLint, Checkov, cost estimates with Infracost, plan review on every pull request and manual approval before apply.",
+          "Authenticated pipelines to AWS with OIDC, so there are no stored access keys. Production changes go only through Git.",
+          "Industrialized application CI/CD pipelines with automated testing, security scanning and zero-downtime deployments, and containerized applications with Docker and Docker Compose.",
+        ],
+      },
+      {
+        title: "Networking",
+        items: [
+          "Built the hub network: Transit Gateway, VPCs with IPAM, DNS, AWS Network Firewall, and Site-to-Site / SD-WAN VPN (Cato Networks).",
+          "Configured Application Load Balancers, WAF and Route 53, and led the diagnosis and resolution of critical production connectivity incidents.",
+          "Deployed SFTP infrastructure and Multi-AZ Amazon RDS databases for clients in Belgium and Italy.",
+        ],
+      },
+      {
+        title: "Operations & reliability",
+        items: [
+          "Set up monitoring and audit logging with CloudWatch and CloudTrail for faster troubleshooting and full traceability.",
+          "Built AWS Backup with cross-account and cross-region copies and automated restore tests, with RTO/RPO objectives defined from the design stage.",
+          "Automated Linux patching and hardening with SSM and Ansible, and wrote Python Lambdas for operations, such as stopping sandbox instances when their budget is exceeded.",
+        ],
+      },
+      {
+        title: "Security skills gained",
+        items: [
+          "Worked alongside the client's security engineer to implement security guardrails and threat detection as code (SCPs, GuardDuty, Security Hub).",
+          "Gained hands-on experience of compliance requirements such as DORA in a regulated financial environment.",
+        ],
+      },
     ],
-    note: {
-      title: "Security skills gained",
-      text: "Working alongside the client's security engineer, I implemented security guardrails and threat detection as code (SCPs, GuardDuty, Security Hub). This gave me hands-on experience of compliance requirements such as DORA in a regulated financial environment.",
-    },
-    stack: ["AWS", "Terraform", "Bitbucket Pipelines", "Docker", "Ansible", "Python", "Transit Gateway", "VPC", "Route 53", "RDS", "CloudWatch", "AWS Backup"],
+    stack: [
+      "AWS", "Terraform", "AWS Organizations", "Bitbucket Pipelines", "OIDC", "Docker", "Ansible", "Python / Lambda",
+      "Transit Gateway", "VPC / IPAM", "Route 53", "ALB / WAF", "RDS", "AWS Backup", "CloudWatch", "SSM",
+    ],
   },
   {
     role: "Cloud & DevOps Engineer",
     company: "KPIT Technologies",
-    subtitle: "End-of-studies project · OpenStack private cloud for Kubernetes",
+    subtitle: "End-of-studies project: distributed private cloud with OpenStack for resilient apps on Kubernetes",
     period: "02/2025 – 07/2025",
     location: "Sfax, Tunisia",
-    summary: "Built a private cloud to host containerized applications, from bare-metal servers to monitored Kubernetes workloads.",
+    summary:
+      "Designed and delivered a production-grade private cloud as an alternative to public-cloud hosting for containerized applications, from bare-metal nodes to monitored Kubernetes workloads.",
     impact: [
       { value: "−40%", label: "deployment time" },
-      { value: "−30–40%", label: "cloud costs" },
+      { value: "30–40%", label: "public-cloud spend cut" },
       { value: "99.9%", label: "availability" },
+      { value: "100%", label: "automated provisioning" },
     ],
-    highlights: [
-      { lead: "Private cloud", text: "Deployed a multi-node OpenStack cloud with Kolla-Ansible and Ceph storage, with a highly available control plane (HAProxy, Keepalived)." },
-      { lead: "Automation", text: "Provisioned VMs and networks with Terraform, reaching 100% automated deployments." },
-      { lead: "Networking", text: "Designed segmented virtual networks (VXLAN, NAT, security groups) to isolate workloads." },
-      { lead: "Kubernetes & monitoring", text: "Ran a K3s cluster on OpenStack and centralized metrics and logs with Prometheus, Grafana, Fluentd and OpenSearch." },
+    groups: [
+      {
+        title: "Private cloud",
+        items: [
+          "Architected a multi-node OpenStack cloud with Kolla-Ansible, cutting deployment time by 40%.",
+          "Built Ceph distributed storage for scalable, redundant and fault-tolerant workloads.",
+          "Made the control plane highly available with HAProxy and Keepalived, reaching 99.9% availability while cutting public-cloud spend by 30–40%.",
+        ],
+      },
+      {
+        title: "Networking & automation",
+        items: [
+          "Designed segmented virtual networks (VXLAN, NAT, security groups) to isolate workloads.",
+          "Provisioned VMs and networks with Terraform, reaching 100% automated deployments.",
+          "Integrated backing services (MongoDB, MariaDB, Memcached, RabbitMQ) for the platform.",
+        ],
+      },
+      {
+        title: "Kubernetes & observability",
+        items: [
+          "Ran a K3s Kubernetes cluster on OpenStack VMs for containerized applications.",
+          "Centralized metrics and logs with Prometheus, Grafana, Fluentd and OpenSearch, shortening incident detection and response.",
+        ],
+      },
     ],
-    stack: ["OpenStack", "Ceph", "Kolla-Ansible", "Terraform", "K3s", "HAProxy", "Prometheus", "Grafana", "OpenSearch"],
+    stack: ["OpenStack", "Ceph", "Kolla-Ansible", "Terraform", "K3s", "HAProxy", "Keepalived", "VXLAN", "Prometheus", "Grafana", "Fluentd", "OpenSearch"],
   },
   {
     role: "Platform Engineer",
@@ -84,17 +138,24 @@ export const experience = [
     subtitle: "Argo CD dashboard development",
     period: "07/2024 – 08/2024",
     location: "Sfax, Tunisia",
-    summary: "Brought GitOps to a development team, making Git the single source of truth for what runs in the cluster.",
+    summary:
+      "Brought GitOps to a development team: Git became the single source of truth for cluster state, with dashboards and alerting to see what is deployed where.",
     impact: [
       { value: "−40%", label: "deployment errors" },
       { value: "−50%", label: "incident detection time" },
     ],
-    highlights: [
-      { lead: "GitOps", text: "Automated deployments to a K3s cluster with GitLab CI/CD and Argo CD, keeping environments in sync with Git." },
-      { lead: "Dashboard", text: "Built a custom Argo CD dashboard to follow deployments in real time." },
-      { lead: "Monitoring", text: "Set up alerting with Prometheus, Grafana and Alertmanager." },
+    groups: [
+      {
+        title: "What I did",
+        items: [
+          "Set up a K3s cluster (tested alongside KIND and Kubeadm) and automated deployments with GitLab CI/CD and Argo CD, reducing deployment errors by 40%.",
+          "Introduced a GitOps workflow that keeps cluster state in sync with Git, making releases faster and more consistent across development and testing environments.",
+          "Built a custom Argo CD dashboard to follow deployments in real time.",
+          "Configured monitoring and alerting with Prometheus, Grafana and Alertmanager, cutting incident detection time by 50%.",
+        ],
+      },
     ],
-    stack: ["K3s", "GitLab CI/CD", "Argo CD", "Prometheus", "Grafana", "Alertmanager"],
+    stack: ["K3s", "KIND", "Kubeadm", "GitLab CI/CD", "Argo CD", "Prometheus", "Grafana", "Alertmanager"],
   },
   {
     role: "Cloud & DevOps Engineer",
@@ -103,12 +164,18 @@ export const experience = [
     period: "06/2024 – 08/2024",
     location: "Sfax, Tunisia",
     summary: "Evaluated how to run a private cloud in-house and containerized the company's web applications.",
-    highlights: [
-      { lead: "Private cloud", text: "Deployed OpenStack and benchmarked 3 installation methods (Packstack, Kolla-Ansible, DevStack)." },
-      { lead: "Containers", text: "Containerized web applications with Docker and ran them on Minikube." },
-      { lead: "Documentation", text: "Wrote setup guides so the platform could be rebuilt and handed over." },
+    impact: [{ value: "3", label: "OpenStack install methods benchmarked" }],
+    groups: [
+      {
+        title: "What I did",
+        items: [
+          "Deployed a private OpenStack cloud with Packstack and benchmarked 3 installation methods (Packstack, Kolla-Ansible, DevStack) for performance, scalability and operational complexity.",
+          "Containerized web applications with Docker and ran them on a Minikube cluster, simplifying local development and deployments.",
+          "Wrote setup and configuration documentation to support reproducibility and knowledge transfer.",
+        ],
+      },
     ],
-    stack: ["OpenStack", "Kolla-Ansible", "Docker", "Minikube"],
+    stack: ["OpenStack", "Packstack", "Kolla-Ansible", "DevStack", "Docker", "Minikube"],
   },
   {
     role: "AI Engineer",
@@ -116,10 +183,15 @@ export const experience = [
     subtitle: "Brain tumor detection with deep learning",
     period: "06/2023 – 08/2023",
     location: "Sfax, Tunisia",
-    summary: "Research internship applying deep learning to medical imaging.",
-    highlights: [
-      { lead: "AI pipeline", text: "Built MRI preprocessing, 3D U-Net segmentation and tumor classification with VGG19, InceptionV3 and ResNet50V2." },
-      { lead: "Web app", text: "Created a Flask interface to visualize results for medical analysis." },
+    summary: "Research internship applying deep learning to medical imaging, from raw MRI scans to a tool clinicians can use.",
+    groups: [
+      {
+        title: "What I did",
+        items: [
+          "Built an AI pipeline: MRI preprocessing, 3D U-Net segmentation of regions of interest, and tumor classification with VGG19, InceptionV3 and ResNet50V2 (transfer learning).",
+          "Created a Flask web interface to visualize results and support medical analysis.",
+        ],
+      },
     ],
     stack: ["Python", "TensorFlow / Keras", "3D U-Net", "Transfer learning", "Flask"],
   },
@@ -130,9 +202,15 @@ export const experience = [
     period: "02/2022 – 05/2022",
     location: "Mahdia, Tunisia",
     summary: "Replaced manual server setup with repeatable automation.",
-    highlights: [
-      { lead: "Automation", text: "Automated provisioning of Docker, DNS and critical services across multiple servers with Ansible playbooks." },
-      { lead: "Consistency", text: "Standardized configuration management, reducing manual work and improving availability." },
+    groups: [
+      {
+        title: "What I did",
+        items: [
+          "Automated multi-machine provisioning and rollout of Docker, DNS and critical services with Ansible playbooks.",
+          "Standardized configuration management for consistent, repeatable deployments across servers.",
+          "Reduced manual intervention and improved availability through automated, proactive maintenance.",
+        ],
+      },
     ],
     stack: ["Ansible", "Docker", "DNS", "Linux"],
   },
@@ -141,8 +219,14 @@ export const experience = [
     company: "Tunisie Telecom",
     period: "06/2021 – 07/2021",
     location: "Sidi Bouzid, Tunisia",
-    highlights: [
-      { lead: "Networking", text: "Troubleshot network issues and set up monitoring to detect anomalies early." },
+    groups: [
+      {
+        title: "What I did",
+        items: [
+          "Troubleshot network issues to improve performance and reliability.",
+          "Set up monitoring to detect network anomalies early.",
+        ],
+      },
     ],
     stack: ["TCP/IP", "SNMP", "ICMP"],
   },
