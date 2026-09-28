@@ -38,97 +38,45 @@ export const experience = [
     location: "Tunis, Tunisia",
     current: true,
     summary:
-      "Cloud & DevOps engineer for a regulated financial-services client with teams and customers in the UK, France, Belgium and Italy. I own the AWS foundation end to end: account structure, security guardrails, networking, backup and the GitOps pipelines that deliver all of it.",
+      "I build and run AWS infrastructure for a financial-services client with teams in the UK, France, Belgium and Italy, from infrastructure as code to CI/CD, networking and day-to-day operations.",
     impact: [
-      { value: "15", label: "Terraform environments" },
-      { value: "9", label: "workload accounts (FR / UK / BE)" },
-      { value: "~490", label: "automated tests" },
-      { value: "0", label: "long-lived CI credentials" },
+      { value: "15", label: "environments on Terraform" },
+      { value: "4", label: "countries supported" },
+      { value: "0", label: "stored CI credentials" },
     ],
-    keyProject: {
-      title: "Secure multi-account AWS Landing Zone",
-      href: "#project-landing-zone",
+    highlights: [
+      { lead: "Infrastructure as Code", text: "Built multi-account AWS infrastructure with Terraform: reusable modules and separate Dev, Staging and Production environments, with drift detection." },
+      { lead: "CI/CD", text: "Automated delivery with Bitbucket Pipelines and OIDC: tests, linting and plan review on every change, and approval before production." },
+      { lead: "Networking", text: "Set up Transit Gateway, VPCs, Site-to-Site VPN, load balancers, WAF and Route 53, and resolved critical production connectivity incidents." },
+      { lead: "Reliability", text: "Set up CloudWatch and CloudTrail monitoring, and cross-region backups with restore tests and RTO/RPO targets." },
+      { lead: "Client delivery", text: "Deployed Multi-AZ Amazon RDS databases and SFTP infrastructure for clients in Belgium and Italy." },
+      { lead: "Automation", text: "Automated server provisioning, patching and hardening with Ansible and AWS SSM, and Docker-based application deployments." },
+    ],
+    note: {
+      title: "Security skills gained",
+      text: "Working alongside the client's security engineer, I implemented security guardrails and threat detection as code (SCPs, GuardDuty, Security Hub). This gave me hands-on experience of compliance requirements such as DORA in a regulated financial environment.",
     },
-    groups: [
-      {
-        title: "Cloud foundation & IaC",
-        items: [
-          "Designed and built a multi-account AWS Landing Zone in Terraform: AWS Organizations with Security, Infrastructure, Resilience, Policy-Staging, Quarantine and Workloads OUs, and 9 workload accounts across France, the UK and Belgium (Production, Staging, Sandbox).",
-          "Wrote 40 reusable Terraform modules so every workload account gets the same baseline (CloudTrail, Config, VPC, budgets, break-glass role, OIDC deploy role) from one parameterized module.",
-          "Built multi-account, multi-region IaC that removes configuration drift between Development, Staging and Production, with scheduled drift detection.",
-        ],
-      },
-      {
-        title: "Security & compliance",
-        items: [
-          "Implemented preventive guardrails: Service Control Policies per OU, a resource-control data perimeter, data-residency and tagging policies, and EC2 declarative policies. Candidate SCPs are validated in a dedicated Policy-Staging OU before rollout.",
-          "Centralized detection with GuardDuty, Security Hub, Macie, Inspector and AWS Config conformance packs, with findings routed through EventBridge to the SOC. A daily auditor checks that every account is enrolled.",
-          "Automated incident response: a quarantine Lambda isolates a compromised account or network, automatically for high-confidence findings or manually through SSM Automation.",
-          "Supported DORA and ISO 27001 compliance: weekly ICT asset inventory (DORA art. 8) and a major-incident notification clock (DORA art. 19).",
-          "Hardened access with IAM Identity Center permission sets, root-account hardening, break-glass roles, and Linux patching and hardening with SSM and Ansible.",
-        ],
-      },
-      {
-        title: "Networking & resilience",
-        items: [
-          "Engineered a hub network with Transit Gateway, AWS Network Firewall (central list of restricted ports), IPAM, DNS, Site-to-Site / SD-WAN VPN (Cato Networks), ALB, WAF and Route 53, and led the resolution of critical production connectivity incidents.",
-          "Built AWS Backup with cross-account and cross-region copies, plus automated restore tests that record a verdict for each restore. RTO/RPO objectives are defined from the design stage.",
-          "Deployed Multi-AZ Amazon RDS databases and SFTP infrastructure for clients in Belgium and Italy.",
-        ],
-      },
-      {
-        title: "CI/CD & DevSecOps",
-        items: [
-          "Built Bitbucket Pipelines with OIDC (no stored AWS keys): fmt/validate, Terraform tests, TFLint, Checkov, gitleaks, Infracost, OPA policy checks on the plan, pytest, plan review on pull requests and manual approval before apply.",
-          "Production is GitOps-only, with no direct human write access. Container images are pinned by digest, and sandbox accounts stop automatically when they exceed their budget.",
-        ],
-      },
-    ],
-    stack: [
-      "AWS Organizations", "Terraform", "SCP / RCP", "IAM Identity Center", "GuardDuty", "Security Hub", "Macie", "AWS Config",
-      "Transit Gateway", "Network Firewall", "AWS Backup", "Lambda (Python)", "SSM", "Bitbucket Pipelines", "OPA", "Checkov",
-    ],
+    stack: ["AWS", "Terraform", "Bitbucket Pipelines", "Docker", "Ansible", "Python", "Transit Gateway", "VPC", "Route 53", "RDS", "CloudWatch", "AWS Backup"],
   },
   {
     role: "Cloud & DevOps Engineer",
     company: "KPIT Technologies",
-    subtitle: "End-of-studies project: distributed private cloud with OpenStack for resilient apps on Kubernetes",
+    subtitle: "End-of-studies project · OpenStack private cloud for Kubernetes",
     period: "02/2025 – 07/2025",
     location: "Sfax, Tunisia",
-    summary:
-      "Designed and delivered a production-grade private cloud as an alternative to public-cloud hosting for containerized applications, from bare-metal nodes to monitored Kubernetes workloads.",
+    summary: "Built a private cloud to host containerized applications, from bare-metal servers to monitored Kubernetes workloads.",
     impact: [
       { value: "−40%", label: "deployment time" },
-      { value: "30–40%", label: "public-cloud spend cut" },
+      { value: "−30–40%", label: "cloud costs" },
       { value: "99.9%", label: "availability" },
-      { value: "100%", label: "automated provisioning" },
     ],
-    groups: [
-      {
-        title: "Private cloud",
-        items: [
-          "Architected a multi-node OpenStack cloud with Kolla-Ansible, cutting deployment time by 40%.",
-          "Built Ceph distributed storage for scalable, redundant and fault-tolerant workloads.",
-          "Made the control plane highly available with HAProxy and Keepalived, reaching 99.9% availability while cutting public-cloud spend by 30–40%.",
-        ],
-      },
-      {
-        title: "Networking & automation",
-        items: [
-          "Designed segmented virtual networks (VXLAN, NAT, security groups) to isolate workloads.",
-          "Provisioned VMs and networks with Terraform, reaching 100% automated deployments.",
-          "Integrated backing services (MongoDB, MariaDB, Memcached, RabbitMQ) for the platform.",
-        ],
-      },
-      {
-        title: "Kubernetes & observability",
-        items: [
-          "Ran a K3s Kubernetes cluster on OpenStack VMs for containerized applications.",
-          "Centralized metrics and logs with Prometheus, Grafana, Fluentd and OpenSearch, shortening incident detection and response.",
-        ],
-      },
+    highlights: [
+      { lead: "Private cloud", text: "Deployed a multi-node OpenStack cloud with Kolla-Ansible and Ceph storage, with a highly available control plane (HAProxy, Keepalived)." },
+      { lead: "Automation", text: "Provisioned VMs and networks with Terraform, reaching 100% automated deployments." },
+      { lead: "Networking", text: "Designed segmented virtual networks (VXLAN, NAT, security groups) to isolate workloads." },
+      { lead: "Kubernetes & monitoring", text: "Ran a K3s cluster on OpenStack and centralized metrics and logs with Prometheus, Grafana, Fluentd and OpenSearch." },
     ],
-    stack: ["OpenStack", "Ceph", "Kolla-Ansible", "Terraform", "K3s", "HAProxy", "Keepalived", "VXLAN", "Prometheus", "Grafana", "Fluentd", "OpenSearch"],
+    stack: ["OpenStack", "Ceph", "Kolla-Ansible", "Terraform", "K3s", "HAProxy", "Prometheus", "Grafana", "OpenSearch"],
   },
   {
     role: "Platform Engineer",
@@ -136,24 +84,17 @@ export const experience = [
     subtitle: "Argo CD dashboard development",
     period: "07/2024 – 08/2024",
     location: "Sfax, Tunisia",
-    summary:
-      "Brought GitOps to a development team: Git became the single source of truth for cluster state, with dashboards and alerting to see what is deployed where.",
+    summary: "Brought GitOps to a development team, making Git the single source of truth for what runs in the cluster.",
     impact: [
       { value: "−40%", label: "deployment errors" },
       { value: "−50%", label: "incident detection time" },
     ],
-    groups: [
-      {
-        title: "What I did",
-        items: [
-          "Set up a K3s cluster (tested alongside KIND and Kubeadm) and automated deployments with GitLab CI/CD and Argo CD, reducing deployment errors by 40%.",
-          "Introduced a GitOps workflow that keeps cluster state in sync with Git, making releases faster and more consistent across development and testing environments.",
-          "Built a custom Argo CD dashboard to follow deployments in real time.",
-          "Configured monitoring and alerting with Prometheus, Grafana and Alertmanager, cutting incident detection time by 50%.",
-        ],
-      },
+    highlights: [
+      { lead: "GitOps", text: "Automated deployments to a K3s cluster with GitLab CI/CD and Argo CD, keeping environments in sync with Git." },
+      { lead: "Dashboard", text: "Built a custom Argo CD dashboard to follow deployments in real time." },
+      { lead: "Monitoring", text: "Set up alerting with Prometheus, Grafana and Alertmanager." },
     ],
-    stack: ["K3s", "KIND", "Kubeadm", "GitLab CI/CD", "Argo CD", "Prometheus", "Grafana", "Alertmanager"],
+    stack: ["K3s", "GitLab CI/CD", "Argo CD", "Prometheus", "Grafana", "Alertmanager"],
   },
   {
     role: "Cloud & DevOps Engineer",
@@ -162,18 +103,12 @@ export const experience = [
     period: "06/2024 – 08/2024",
     location: "Sfax, Tunisia",
     summary: "Evaluated how to run a private cloud in-house and containerized the company's web applications.",
-    impact: [{ value: "3", label: "OpenStack install methods benchmarked" }],
-    groups: [
-      {
-        title: "What I did",
-        items: [
-          "Deployed a private OpenStack cloud with Packstack and benchmarked 3 installation methods (Packstack, Kolla-Ansible, DevStack) for performance, scalability and operational complexity.",
-          "Containerized web applications with Docker and ran them on a Minikube cluster, simplifying local development and deployments.",
-          "Wrote setup and configuration documentation to support reproducibility and knowledge transfer.",
-        ],
-      },
+    highlights: [
+      { lead: "Private cloud", text: "Deployed OpenStack and benchmarked 3 installation methods (Packstack, Kolla-Ansible, DevStack)." },
+      { lead: "Containers", text: "Containerized web applications with Docker and ran them on Minikube." },
+      { lead: "Documentation", text: "Wrote setup guides so the platform could be rebuilt and handed over." },
     ],
-    stack: ["OpenStack", "Packstack", "Kolla-Ansible", "DevStack", "Docker", "Minikube"],
+    stack: ["OpenStack", "Kolla-Ansible", "Docker", "Minikube"],
   },
   {
     role: "AI Engineer",
@@ -181,15 +116,10 @@ export const experience = [
     subtitle: "Brain tumor detection with deep learning",
     period: "06/2023 – 08/2023",
     location: "Sfax, Tunisia",
-    summary: "Research internship applying deep learning to medical imaging, from raw MRI scans to a tool clinicians can use.",
-    groups: [
-      {
-        title: "What I did",
-        items: [
-          "Built an AI pipeline: MRI preprocessing, 3D U-Net segmentation of regions of interest, and tumor classification with VGG19, InceptionV3 and ResNet50V2 (transfer learning).",
-          "Created a Flask web interface to visualize results and support medical analysis.",
-        ],
-      },
+    summary: "Research internship applying deep learning to medical imaging.",
+    highlights: [
+      { lead: "AI pipeline", text: "Built MRI preprocessing, 3D U-Net segmentation and tumor classification with VGG19, InceptionV3 and ResNet50V2." },
+      { lead: "Web app", text: "Created a Flask interface to visualize results for medical analysis." },
     ],
     stack: ["Python", "TensorFlow / Keras", "3D U-Net", "Transfer learning", "Flask"],
   },
@@ -200,15 +130,9 @@ export const experience = [
     period: "02/2022 – 05/2022",
     location: "Mahdia, Tunisia",
     summary: "Replaced manual server setup with repeatable automation.",
-    groups: [
-      {
-        title: "What I did",
-        items: [
-          "Automated multi-machine provisioning and rollout of Docker, DNS and critical services with Ansible playbooks.",
-          "Standardized configuration management for consistent, repeatable deployments across servers.",
-          "Reduced manual intervention and improved availability through automated, proactive maintenance.",
-        ],
-      },
+    highlights: [
+      { lead: "Automation", text: "Automated provisioning of Docker, DNS and critical services across multiple servers with Ansible playbooks." },
+      { lead: "Consistency", text: "Standardized configuration management, reducing manual work and improving availability." },
     ],
     stack: ["Ansible", "Docker", "DNS", "Linux"],
   },
@@ -217,14 +141,8 @@ export const experience = [
     company: "Tunisie Telecom",
     period: "06/2021 – 07/2021",
     location: "Sidi Bouzid, Tunisia",
-    groups: [
-      {
-        title: "What I did",
-        items: [
-          "Troubleshot network issues to improve performance and reliability.",
-          "Set up monitoring to detect network anomalies early.",
-        ],
-      },
+    highlights: [
+      { lead: "Networking", text: "Troubleshot network issues and set up monitoring to detect anomalies early." },
     ],
     stack: ["TCP/IP", "SNMP", "ICMP"],
   },
@@ -233,22 +151,22 @@ export const experience = [
 export const featuredProjects = [
   {
     id: "project-landing-zone",
-    title: "Secure Multi-Account AWS Landing Zone",
+    title: "Multi-Account AWS Landing Zone",
     date: "2026 · Neoshore / Hilbert Investment Solutions",
-    tagline: "The regulated AWS foundation for a financial-services group in France, the UK and Belgium, built entirely in Terraform and delivered through GitOps.",
-    flow: ["Bitbucket PR", "Checkov · OPA · tests", "OIDC plan", "Approval", "AWS Organizations"],
+    tagline: "The AWS platform foundation for a financial-services group in France, the UK and Belgium, fully in Terraform and delivered through Git. I owned the infrastructure code, pipelines, networking and backup, working alongside the security engineer.",
+    flow: ["Pull request", "Validate · test · lint", "OIDC plan", "Approval", "Terraform apply"],
     highlights: [
-      "Organization with 6 OUs and 9 workload accounts (FR / UK / BE × prod, staging, sandbox), from 40 reusable Terraform modules and 15 environments.",
-      "Preventive guardrails: SCPs per OU, a data perimeter, data-residency and tag policies, validated in a Policy-Staging OU and tested for both syntax and effective access.",
-      "Detection and response: GuardDuty, Security Hub, Macie and Config across all accounts, SOC alerting, and a Lambda that quarantines compromised accounts or networks.",
-      "Hub networking with Transit Gateway, Network Firewall and IPAM. Cross-account and cross-region backups with automated restore tests. DORA and ISO 27001 controls (ICT inventory, incident-notification clock).",
+      "AWS Organizations with 9 workload accounts (France / UK / Belgium × Production, Staging, Sandbox), built from 40 reusable Terraform modules and 15 environments.",
+      "Bitbucket Pipelines with OIDC (no stored keys): Terraform tests, TFLint, Checkov, Infracost, plan on every pull request, manual approval, and drift detection.",
+      "Hub networking with Transit Gateway, VPCs and IPAM, Network Firewall, DNS and VPN.",
+      "AWS Backup with cross-account and cross-region copies and automated restore tests, plus patching with SSM. Security controls such as SCP guardrails were implemented as code together with the security engineer.",
     ],
     stats: [
       { value: "40", label: "Terraform modules" },
-      { value: "~490", label: "automated tests" },
+      { value: "15", label: "environments" },
       { value: "0", label: "stored AWS keys" },
     ],
-    stack: ["AWS Organizations", "Terraform", "SCP / RCP", "GuardDuty", "Security Hub", "Network Firewall", "AWS Backup", "Python", "OPA", "Checkov", "Bitbucket Pipelines"],
+    stack: ["AWS Organizations", "Terraform", "Bitbucket Pipelines", "OIDC", "Transit Gateway", "IPAM", "AWS Backup", "SSM", "Python", "Checkov", "Infracost"],
   },
   {
     title: "Conversational AI Agent Service",
