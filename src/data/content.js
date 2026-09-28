@@ -294,6 +294,15 @@ export const projectCategories = ["All", "Cloud & IaC", "GitOps & CI/CD", "Secur
 
 export const projects = [
   {
+    title: "Kubernetes Cluster Automation with Terraform",
+    date: "09/2026",
+    category: "Cloud & IaC",
+    description:
+      "One command builds a full Kubernetes cluster on KVM: Terraform creates the VMs (libvirt, cloud-init, static networking), then Ansible bootstraps it with k3s (HA), kubeadm (containerd + Calico), minikube or a pinned Kubespray release, and returns the kubeconfig.",
+    stack: ["Terraform", "libvirt/KVM", "Ansible", "k3s", "kubeadm", "Kubespray", "minikube"],
+    link: "https://github.com/malekachouri/terraform-k8s-cluster-automation",
+  },
+  {
     title: "MERN Application on Azure",
     date: "11/2025",
     category: "Cloud & IaC",

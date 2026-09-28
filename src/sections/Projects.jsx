@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight, FiGithub } from "react-icons/fi";
 import Section from "../components/Section";
 import Reveal from "../components/Reveal";
 import Tags from "../components/Tags";
@@ -98,6 +98,16 @@ export default function Projects() {
             <h4 className="mt-2 font-semibold">{p.title}</h4>
             <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">{p.description}</p>
             <Tags items={p.stack} className="mt-4" />
+            {p.link && (
+              <a
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-1.5 self-start text-xs font-medium text-accent hover:underline"
+              >
+                <FiGithub aria-hidden="true" /> View code
+              </a>
+            )}
           </li>
         ))}
       </ul>
